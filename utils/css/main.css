@@ -1,0 +1,82 @@
+/*
+<html>
+	<body> // 8px margin
+		<div class="topbar"> // 12px margin
+			// topbar here
+		</div>
+		<div class="main-page"> // 20px margin
+			// content here
+		</div>
+	</body>
+</html>
+*/
+
+html {
+	background-color: black;
+	color: white;
+	font-family: 'Product Sans';
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	margin: 8px;
+	height: calc(100% - 16px);
+	width: calc(100% - 16px);
+}
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:link, a:visited {
+	color: rgb(54, 182, 224);
+}
+
+a:hover {
+	color: rgb(12, 82, 105);
+}
+
+a:active {
+	color: yellow;
+}
+
+.topbar {
+	list-style-type: none;
+	margin: 12px;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.topbar li {
+	float: left;
+}
+
+.topbar li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.topbar li a:hover {
+	background-color: #111;
+}
+
+.topbar li a.active {
+	background-color: #333;
+}
+
+.topbar li img {
+	display: block;
+	transform: translateY(5%);
+}
+
+.main-page {
+	margin: 20px;
+	height: calc(100% - (40px + 47px));
+	width: calc(100% - 40px);
+}
