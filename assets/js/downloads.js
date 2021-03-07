@@ -3,7 +3,7 @@ var BASE_URL = "https://raw.githubusercontent.com/SebaUbuntu/data/master/"
 var DEVICES_DATA_URL = BASE_URL + "devices.json"
 var DEVICES_BASE_URL = BASE_URL + "devices/"
 var DEVICE_IMAGES_BASE_URL = BASE_URL + "images/"
-var DOWNLOAD_BASE_URL = "https://files.sebaubuntu.me/ROMs/"
+var DOWNLOAD_BASE_URL = "https://files.sebaubuntu.dev/ROMs/"
 var devicesData
 
 // Functions
