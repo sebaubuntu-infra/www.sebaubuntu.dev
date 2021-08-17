@@ -56,18 +56,7 @@ function updateDeviceInfo(device) {
 		'<h3>Release date: ' + deviceData.release + '</h3>' +
 		'<h3>CPU: ' + deviceData.specs.cpu.vendor + ' ' + deviceData.specs.cpu.model + ' (<span style="font-family:monospace;">' + deviceData.specs.cpu.codename + '</span>)</h3>' +
 		'<h3>Display: ' + deviceData.specs.display.height + 'x' + deviceData.specs.display.width + ' (' + deviceData.specs.display.hz + 'hz)</h3>' +
-		'<h3>Camera:' +
 		'<br>'
-	
-	var cameraPositionsList = Object.keys(deviceData.specs.camera);
-	cameraPositionsList.forEach(cameraPosition => {
-		deviceInfoPage += cameraPosition + ': '
-		var camerasList = deviceData.specs.camera[cameraPosition];
-		for (camera in camerasList) {
-			deviceInfoPage += camerasList[camera] + 'mpx, '
-		};
-		deviceInfoPage += '<br>'
-	});
 
 	deviceInfoPage += '<h2>Downloads:</h2>'
 
