@@ -2,8 +2,10 @@
 var BASE_URL = "https://raw.githubusercontent.com/SebaUbuntu/data/master/"
 var DEVICES_DATA_URL = BASE_URL + "devices.json"
 var DEVICES_BASE_URL = BASE_URL + "devices/"
-var DEVICE_IMAGES_BASE_URL = BASE_URL + "images/"
-var DOWNLOAD_BASE_URL = "https://files.sebaubuntu.dev/ROMs/"
+var DEVICE_IMAGES_BASE_URL_OFFICIAL = "https://wiki.lineageos.org/images/devices/"
+var DEVICE_IMAGES_BASE_URL_UNOFFICIAL = BASE_URL + "images/"
+var DOWNLOAD_BASE_URL_OFFICIAL = "https://download.lineageos.org/"
+var DOWNLOAD_BASE_URL_UNOFFICIAL = "https://files.sebaubuntu.dev/ROMs/"
 var devicesData
 
 // Functions
@@ -60,20 +62,22 @@ function updateDeviceInfo(device) {
 
 	deviceInfoPage += '<h2>Downloads:</h2>'
 
-	deviceInfoPage += '<h3><a href="' + DOWNLOAD_BASE_URL + device + '/LineageOS">LineageOS</a></h3>' +
-		'<ul>'
-	var projectVersionsList = deviceData.versions;
-	for (version in projectVersionsList) {
-		versionCode = deviceData.versions[version]
-		deviceInfoPage += '<li>' +
-				'<a href="' + DOWNLOAD_BASE_URL + device + '/LineageOS/' + versionCode + '">Android ' + versionCode + '</a>' +
-			'</li>'
-	};
-	deviceInfoPage += '</ul>'
+	if (deviceData.official == "true") {
+		deviceDownloadURL = DOWNLOAD_BASE_URL_OFFICIAL + device
+	} else {
+		deviceDownloadURL = DOWNLOAD_BASE_URL_UNOFFICIAL + device + "/LineageOS"
+	}
+	deviceInfoPage += '<h3><a href="' + deviceDownloadURL + '">LineageOS download</a></h3>'
 
 	deviceInfoElement.innerHTML = deviceInfoPage;
 
-	deviceImageElement.innerHTML = '<img src="' + DEVICE_IMAGES_BASE_URL + device + '.png' + '"></img>'
+	if (deviceData.official == "true") {
+		deviceImageURL = DEVICE_IMAGES_BASE_URL_OFFICIAL + device + '.png'
+	} else {
+		deviceImageURL = DEVICE_IMAGES_BASE_URL_UNOFFICIAL + device + '.png'
+	}
+	
+	deviceImageElement.innerHTML = '<img src="' + deviceImageURL + '"></img>'
 
 	var activeBoxes = document.getElementsByClassName("device-active");
 	for (let deviceBox of activeBoxes) {
