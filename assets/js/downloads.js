@@ -62,7 +62,7 @@ function updateDeviceInfo(device) {
 
 	deviceInfoPage += '<h2>Downloads:</h2>'
 
-	if (deviceData.official == "true") {
+	if (deviceData.official == true) {
 		deviceDownloadURL = DOWNLOAD_BASE_URL_OFFICIAL + device
 	} else {
 		deviceDownloadURL = DOWNLOAD_BASE_URL_UNOFFICIAL + device + "/LineageOS"
@@ -71,7 +71,7 @@ function updateDeviceInfo(device) {
 
 	deviceInfoElement.innerHTML = deviceInfoPage;
 
-	if (deviceData.official == "true") {
+	if (deviceData.official == true) {
 		deviceImageURL = DEVICE_IMAGES_BASE_URL_OFFICIAL + device + '.png'
 	} else {
 		deviceImageURL = DEVICE_IMAGES_BASE_URL_UNOFFICIAL + device + '.png'
