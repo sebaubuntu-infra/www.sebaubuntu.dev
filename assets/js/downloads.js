@@ -60,19 +60,16 @@ function updateDeviceInfo(device) {
 
 	deviceInfoPage += '<h2>Downloads:</h2>'
 
-	var deviceProjectsList = Object.keys(deviceData.projects);
-	deviceProjectsList.forEach(project => {
-		deviceInfoPage += '<h3><a href="' + DOWNLOAD_BASE_URL + device + '/' + project + '">' + project + '</a></h3>' +
-			'<ul>'
-		var projectVersionsList = deviceData.projects[project].versions;
-		for (version in projectVersionsList) {
-			versionCode = deviceData.projects[project].versions[version]
-			deviceInfoPage += '<li>' +
-					'<a href="' + DOWNLOAD_BASE_URL + device + '/' + project + '/' + versionCode + '">Android ' + versionCode + '</a>' +
-				'</li>'
-		};
-		deviceInfoPage += '</ul>'
-	});
+	deviceInfoPage += '<h3><a href="' + DOWNLOAD_BASE_URL + device + '/LineageOS">LineageOS</a></h3>' +
+		'<ul>'
+	var projectVersionsList = deviceData.versions;
+	for (version in projectVersionsList) {
+		versionCode = deviceData.versions[version]
+		deviceInfoPage += '<li>' +
+				'<a href="' + DOWNLOAD_BASE_URL + device + '/LineageOS/' + versionCode + '">Android ' + versionCode + '</a>' +
+			'</li>'
+	};
+	deviceInfoPage += '</ul>'
 
 	deviceInfoElement.innerHTML = deviceInfoPage;
 
