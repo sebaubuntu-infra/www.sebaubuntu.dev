@@ -76,7 +76,7 @@ function updateDeviceInfo(device) {
 	} else {
 		deviceImageURL = DEVICE_IMAGES_BASE_URL_UNOFFICIAL + device + '.png'
 	}
-	
+
 	deviceImageElement.innerHTML = '<img src="' + deviceImageURL + '"></img>'
 
 	var activeBoxes = document.getElementsByClassName("device-active");
