@@ -1,6 +1,7 @@
 var headElement = document.getElementById("topbar")
 var topbarElement = document.createElement("div");
 var currentPage = "topbar-" + document.currentScript.getAttribute('page');
+var currentButton = document.getElementById(currentPage);
 
 topbarElement.innerHTML = '' +
 		'<ul class="topbar">' +
@@ -19,5 +20,4 @@ topbarElement.innerHTML = '' +
 
 headElement.appendChild(topbarElement);
 
-var currentButton = document.getElementById(currentPage)
 currentButton.setAttribute("class", "active");
