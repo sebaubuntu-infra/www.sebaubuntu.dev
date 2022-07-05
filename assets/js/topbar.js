@@ -20,4 +20,4 @@ topbarElement.innerHTML = '' +
 headElement.appendChild(topbarElement);
 
 var currentButton = document.getElementById(currentPage)
-currentButton.setAttribute("class", "active")
+currentButton.setAttribute("class", "active");

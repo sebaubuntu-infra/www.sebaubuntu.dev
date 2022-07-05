@@ -1,12 +1,12 @@
 // Global variables
-var BASE_URL = "https://raw.githubusercontent.com/SebaUbuntu/data/master/"
-var DEVICES_DATA_URL = BASE_URL + "devices.json"
-var DEVICES_BASE_URL = BASE_URL + "devices/"
-var DEVICE_IMAGES_BASE_URL_OFFICIAL = "https://wiki.lineageos.org/images/devices/"
-var DEVICE_IMAGES_BASE_URL_UNOFFICIAL = BASE_URL + "images/"
-var DOWNLOAD_BASE_URL_OFFICIAL = "https://download.lineageos.org/"
-var DOWNLOAD_BASE_URL_UNOFFICIAL = "https://files.sebaubuntu.dev/ROMs/"
-var devicesData
+var BASE_URL = "https://raw.githubusercontent.com/SebaUbuntu/data/master/";
+var DEVICES_DATA_URL = BASE_URL + "devices.json";
+var DEVICES_BASE_URL = BASE_URL + "devices/";
+var DEVICE_IMAGES_BASE_URL_OFFICIAL = "https://wiki.lineageos.org/images/devices/";
+var DEVICE_IMAGES_BASE_URL_UNOFFICIAL = BASE_URL + "images/";
+var DOWNLOAD_BASE_URL_OFFICIAL = "https://download.lineageos.org/";
+var DOWNLOAD_BASE_URL_UNOFFICIAL = "https://files.sebaubuntu.dev/ROMs/";
+var devicesData;
 
 // Functions
 function getJSON(url, callback) {
@@ -28,16 +28,16 @@ function devicesDataSetup(status, devicesjson) {
 	if (status != null) {
 		devicesListElement.innerHTML = '<p>Error fetching devices list</p>';
 	} else {
-		devicesData = devicesjson
-		updateDevicesList()
+		devicesData = devicesjson;
+		updateDevicesList();
 	}
 }
 
 function updateDevicesList() {
-	var devicesListPage = '<h1>Devices</h1>'
+	var devicesListPage = '<h1>Devices</h1>';
 	var devicesList = Object.keys(devicesData);
 	devicesList.forEach(device => {
-		var devicejson = devicesData[device]
+		var devicejson = devicesData[device];
 		devicesListPage += '' +
 			'<div class="device-not-active" id="' + device + '" onclick="updateDeviceInfo(' + "'" + device + "'" + ')">' +
 				'<div style="display:inline-block;">' +
@@ -45,7 +45,7 @@ function updateDevicesList() {
 					'<p>' + device + '</p>' +
 				'</div>' +
 			'</div>' +
-			'<br>'
+			'<br>';
 	});
 	devicesListElement.innerHTML = devicesListPage;
 }
@@ -58,26 +58,26 @@ function updateDeviceInfo(device) {
 		'<h3>Release date: ' + deviceData.release + '</h3>' +
 		'<h3>CPU: ' + deviceData.specs.cpu.vendor + ' ' + deviceData.specs.cpu.model + ' (<span style="font-family:monospace;">' + deviceData.specs.cpu.codename + '</span>)</h3>' +
 		'<h3>Display: ' + deviceData.specs.display.height + 'x' + deviceData.specs.display.width + ' (' + deviceData.specs.display.hz + 'hz)</h3>' +
-		'<br>'
+		'<br>';
 
-	deviceInfoPage += '<h2>Downloads:</h2>'
+	deviceInfoPage += '<h2>Downloads:</h2>';
 
 	if (deviceData.official == true) {
-		deviceDownloadURL = DOWNLOAD_BASE_URL_OFFICIAL + device
+		deviceDownloadURL = DOWNLOAD_BASE_URL_OFFICIAL + device;
 	} else {
-		deviceDownloadURL = DOWNLOAD_BASE_URL_UNOFFICIAL + device + "/LineageOS"
+		deviceDownloadURL = DOWNLOAD_BASE_URL_UNOFFICIAL + device + "/LineageOS";
 	}
-	deviceInfoPage += '<h3><a href="' + deviceDownloadURL + '">LineageOS download</a></h3>'
+	deviceInfoPage += '<h3><a href="' + deviceDownloadURL + '">LineageOS download</a></h3>';
 
 	deviceInfoElement.innerHTML = deviceInfoPage;
 
 	if (deviceData.official == true) {
-		deviceImageURL = DEVICE_IMAGES_BASE_URL_OFFICIAL + device + '.png'
+		deviceImageURL = DEVICE_IMAGES_BASE_URL_OFFICIAL + device + '.png';
 	} else {
-		deviceImageURL = DEVICE_IMAGES_BASE_URL_UNOFFICIAL + device + '.png'
+		deviceImageURL = DEVICE_IMAGES_BASE_URL_UNOFFICIAL + device + '.png';
 	}
 
-	deviceImageElement.innerHTML = '<img src="' + deviceImageURL + '"></img>'
+	deviceImageElement.innerHTML = '<img src="' + deviceImageURL + '"></img>';
 
 	var activeBoxes = document.getElementsByClassName("device-active");
 	for (let deviceBox of activeBoxes) {
@@ -85,7 +85,7 @@ function updateDeviceInfo(device) {
 	}
 
 	var deviceBox = document.getElementById(device);
-	deviceBox.setAttribute("class", "device-active")
+	deviceBox.setAttribute("class", "device-active");
 }
 
 var devicesListElement = document.getElementById("devices-list");
