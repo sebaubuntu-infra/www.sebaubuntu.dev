@@ -5,7 +5,7 @@ var DEVICES_BASE_URL = BASE_URL + "devices/";
 var DEVICE_IMAGES_BASE_URL_OFFICIAL = "https://wiki.lineageos.org/images/devices/";
 var DEVICE_IMAGES_BASE_URL_UNOFFICIAL = BASE_URL + "images/";
 var DOWNLOAD_BASE_URL_OFFICIAL = "https://download.lineageos.org/";
-var DOWNLOAD_BASE_URL_UNOFFICIAL = "https://files.sebaubuntu.dev/ROMs/";
+var DOWNLOAD_BASE_URL_UNOFFICIAL = "https://lineage.sebaubuntu.dev/";
 var devicesData;
 
 // Functions
@@ -65,7 +65,7 @@ function updateDeviceInfo(device) {
 	if (deviceData.official == true) {
 		deviceDownloadURL = DOWNLOAD_BASE_URL_OFFICIAL + device;
 	} else {
-		deviceDownloadURL = DOWNLOAD_BASE_URL_UNOFFICIAL + device + "/LineageOS";
+		deviceDownloadURL = DOWNLOAD_BASE_URL_UNOFFICIAL + device;
 	}
 	deviceInfoPage += '<h3><a href="' + deviceDownloadURL + '">LineageOS download</a></h3>';
 
