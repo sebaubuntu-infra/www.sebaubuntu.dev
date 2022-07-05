@@ -60,14 +60,14 @@ function updateDeviceInfo(device) {
 		'<h3>Display: ' + deviceData.specs.display.height + 'x' + deviceData.specs.display.width + ' (' + deviceData.specs.display.hz + 'hz)</h3>' +
 		'<br>';
 
-	deviceInfoPage += '<h2>Downloads:</h2>';
+	deviceInfoPage += '<h2>Downloads</h2>';
 
 	if (deviceData.official == true) {
 		deviceDownloadURL = DOWNLOAD_BASE_URL_OFFICIAL + device;
 	} else {
 		deviceDownloadURL = DOWNLOAD_BASE_URL_UNOFFICIAL + device;
 	}
-	deviceInfoPage += '<h3><a href="' + deviceDownloadURL + '">LineageOS download</a></h3>';
+	deviceInfoPage += '<h3><a href="' + deviceDownloadURL + '">LineageOS</a></h3>';
 
 	deviceInfoElement.innerHTML = deviceInfoPage;
 
