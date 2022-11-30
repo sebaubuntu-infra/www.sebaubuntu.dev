@@ -1,8 +1,5 @@
-var headElement = document.getElementById("topbar")
+var headElement = document.getElementById("topbar");
 var topbarElement = document.createElement("div");
-var currentPage = "topbar-" + document.currentScript.getAttribute('page');
-var currentButton = document.getElementById(currentPage);
-
 topbarElement.innerHTML = '' +
 		'<ul class="topbar">' +
 			'<div style="float:left;">' +
@@ -17,7 +14,9 @@ topbarElement.innerHTML = '' +
 				'<li><a id="topbar-contact" href="https://t.me/SebaUbuntu">Contact</a></li>' +
 			'</div>' +
 		'</ul>';
-
 headElement.appendChild(topbarElement);
 
+// Set active button
+var currentPage = "topbar-" + document.currentScript.getAttribute('page');
+var currentButton = document.getElementById(currentPage);
 currentButton.setAttribute("class", "active");
