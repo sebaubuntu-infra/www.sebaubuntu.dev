@@ -1,0 +1,28 @@
+/* Posts list */
+.post-card {
+    background-color: #111111;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: auto;
+    width: calc(100% - 40px - 5%);
+}
+
+.post-card-info svg {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.375rem;
+    margin: 0.125rem;
+    fill: white;
+    height: 1.15rem;
+    width: auto;
+    box-sizing: border-box;
+}
+
+/* Post viewer */
+#post-header {
+    background-color: #111111;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: auto;
+    width: calc(100% - 40px);
+}

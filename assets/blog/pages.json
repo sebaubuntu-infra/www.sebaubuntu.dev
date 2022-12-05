@@ -1,0 +1,9 @@
+[
+    {
+        "id": "test-post",
+        "title": "Test post's title",
+        "description": "This is a test post's description",
+        "author": "Sebastiano Barezzi",
+        "timestamp": 1669850261000
+    }
+]

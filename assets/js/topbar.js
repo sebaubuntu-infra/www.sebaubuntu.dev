@@ -8,7 +8,7 @@ topbarElement.innerHTML = '' +
 			'</div>' +
 			'<div style="float:right;">' +
 				'<li><a id="topbar-home" href="index.html">Home</a></li>' +
-				'<li><a id="topbar-blog" href="https://blog.sebaubuntu.dev">Blog</a></li>' +
+				'<li><a id="topbar-blog" href="blog.html">Blog</a></li>' +
 				'<li><a id="topbar-downloads" href="downloads.html">Downloads</a></li>' +
 				'<li><a id="topbar-files" href="https://files.sebaubuntu.dev">Files</a></li>' +
 				'<li><a id="topbar-contact" href="https://t.me/SebaUbuntu">Contact</a></li>' +
