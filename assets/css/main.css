@@ -42,39 +42,6 @@ a:active {
 	color: rgb(7, 53, 68);
 }
 
-.topbar {
-	list-style-type: none;
-	margin: 12px;
-	padding: 0;
-	overflow: hidden;
-	position: relative;
-}
-
-.topbar li {
-	float: left;
-}
-
-.topbar li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-.topbar li a:hover {
-	background-color: #111;
-}
-
-.topbar li a.active {
-	background-color: #333;
-}
-
-.topbar li img {
-	display: block;
-	transform: translateY(5%);
-}
-
 #main-page {
 	margin: 20px;
 	height: calc(100% - (40px + 47px));
