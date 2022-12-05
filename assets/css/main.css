@@ -75,7 +75,7 @@ a:active {
 	transform: translateY(5%);
 }
 
-.main-page {
+#main-page {
 	margin: 20px;
 	height: calc(100% - (40px + 47px));
 	width: calc(100% - 40px);
