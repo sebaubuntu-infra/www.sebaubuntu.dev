@@ -1,28 +1,16 @@
-/*
-<html>
-	<body> // 8px margin
-		<div class="topbar"> // 12px margin
-			// topbar here
-		</div>
-		<div class="main-page"> // 20px margin
-			// content here
-		</div>
-	</body>
-</html>
-*/
-
-html {
-	background-color: black;
-	color: white;
-	font-family: 'Product Sans';
+html, body {
+	box-sizing: border-box;
 	height: 100%;
+	margin: 0;
 	width: 100%;
 }
 
 body {
-	margin: 8px;
-	height: calc(100% - 16px);
-	width: calc(100% - 16px);
+	background-color: black;
+	color: white;
+	display: flex;
+	flex-flow: column;
+	font-family: 'Product Sans';
 }
 
 a {
@@ -43,7 +31,9 @@ a:active {
 }
 
 #main-page {
-	margin: 20px;
-	height: calc(100% - (40px + 47px));
-	width: calc(100% - 40px);
+	box-sizing: border-box;
+	flex: 1;
+	min-height: 0;
+	min-width: 0;
+	padding: 18px 36px 36px;
 }

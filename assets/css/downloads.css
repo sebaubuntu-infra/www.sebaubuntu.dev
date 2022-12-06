@@ -1,24 +1,25 @@
+#main-page {
+	display: flex;
+}
+
 #main-page > div {
-	float: left;
+	box-sizing: border-box;
+	display: inline-block;
+	overflow: auto;
 }
 
 #devices-list {
-	background-color: #1d1d1d;
-	border: 3px solid #1d1d1d;
-	box-sizing: border-box;
+	background-color: #111111;
 	border-radius: 8px;
-	display: inline-block;
+	flex: 1;
 	padding: 0px 16px;
 	vertical-align: top;
-	overflow: auto;
-	width: calc(25% - 20px);
-	height: 100%;
 }
 
 #device-tab {
-	margin-left: 40px;
-	width: calc(75% - 20px);
-	height: 50%;
+	flex: 3;
+	height: 100%;
+	padding: 8px 16px;
 }
 
 #devices-list div {
@@ -30,26 +31,28 @@
 }
 
 #devices-list .device-not-active:hover {
-	background-color: #111;
+	background-color: #222222;
 }
 
 #devices-list .device-active {
-	background-color: #333;
+	background-color: #333333;
+}
+
+#device-tab > div {
+	height: 100%;
 }
 
 #device-info-tab {
 	float: left;
 	width: 75%;
-	height: 100%;
 }
 
 #device-image-tab {
 	float: right;
 	width: 25%;
-	height: 100%;
 	margin: 0;
 }
-  
+
 #device-image-tab > img {
 	max-width: 100%;
 	max-height: 100%;
@@ -61,27 +64,31 @@
 	 * of the screen, and the infos on the bottom
 	*/
 
-	#devices-list {
+	#main-page {
+		display: block;
+	}
+
+	#main-page > div {
+		flex: none;
 		width: 100%;
-		height: 50%
+	}
+
+	#devices-list {
+		height: 50%;
 	}
 
 	#device-tab {
-		width: 100%;
-		margin-left: 0px;
+		height: auto;
 	}
 
-	#device-info-tab {
+	#device-tab > div {
 		float: none;
-		width: 100%;
 		height: auto;
+		width: 100%;
 	}
 
 	#device-image-tab {
-		margin-top: 20px;
-		margin-left: 0px;
-		float: none;
-		width: 100%;
-		height: auto;
+		margin: 20px 0px;
+		text-align: center;
 	}
 }

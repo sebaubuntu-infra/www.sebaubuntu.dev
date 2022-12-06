@@ -93,10 +93,9 @@ function main() {
 						'<h1 id="post-header-title">' + page.title + '</h1>' +
 						'<h4 id="post-header-info">Written on ' + page.getFormattedDate() + ' by ' + page.author + '</h4>' +
 					'</div>' +
-					'<br>';
-
-				// Add content
-				blogMain.innerHTML += content;
+					'<div id="post-content">' +
+						content +
+					'</div>';
 			});
 		} else {
 			// The user didn't request a specific page, show the list of pages

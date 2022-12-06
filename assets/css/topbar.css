@@ -1,9 +1,9 @@
 #topbar {
+	flex: 0 1 auto;
+	margin: 0;
+	padding: 12px;
 	list-style-type: none;
-	margin: 12px;
-	padding: 0;
 	overflow: hidden;
-	position: relative;
 }
 
 #topbar li {
@@ -32,9 +32,9 @@
 }
 
 #topbar-left {
-    float: left;
+	float: left;
 }
 
 #topbar-right {
-    float: right;
+	float: right;
 }
