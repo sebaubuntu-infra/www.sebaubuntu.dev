@@ -1,56 +1,5 @@
 [
     {
-        "codename": "alioth",
-        "manufacturer": "Xiaomi",
-        "model": "POCO F3 / Redmi K40 / Mi 11X",
-        "releaseDate": "2021/03",
-        "soc": {
-            "codename": "sm8250",
-            "vendor": "Qualcomm",
-            "model": "Snapdragon 870"
-        },
-        "display": {
-            "height": 2400,
-            "width": 1080,
-            "refreshRate": 120
-        },
-        "official": true
-    },
-    {
-        "codename": "apollon",
-        "manufacturer": "Xiaomi",
-        "model": "Mi 10T / Mi 10T Pro / Redmi K30S Ultra",
-        "releaseDate": "2020/10",
-        "soc": {
-            "codename": "sm8250",
-            "vendor": "Qualcomm",
-            "model": "Snapdragon 865"
-        },
-        "display": {
-            "height": 2400,
-            "width": 1080,
-            "refreshRate": 144
-        },
-        "official": true
-    },
-    {
-        "codename": "cepheus",
-        "manufacturer": "Xiaomi",
-        "model": "Mi 9",
-        "releaseDate": "2019/03",
-        "soc": {
-            "codename": "sm8150",
-            "vendor": "Qualcomm",
-            "model": "Snapdragon 855"
-        },
-        "display": {
-            "height": 2340,
-            "width": 1080,
-            "refreshRate": 60
-        },
-        "official": false
-    },
-    {
         "codename": "lmi",
         "manufacturer": "Xiaomi",
         "model": "POCO F2 Pro / Redmi K30 Pro / Redmi K30 Pro Zoom Edition",
@@ -117,23 +66,6 @@
             "refreshRate": 120
         },
         "official": true
-    },
-    {
-        "codename": "vince",
-        "manufacturer": "Xiaomi",
-        "model": "Redmi 5 Plus",
-        "releaseDate": "2018/01",
-        "soc": {
-            "codename": "msm8953",
-            "vendor": "Qualcomm",
-            "model": "Snapdragon 625"
-        },
-        "display": {
-            "height": 2160,
-            "width": 1080,
-            "refreshRate": 60
-        },
-        "official": false
     },
     {
         "codename": "whyred",
