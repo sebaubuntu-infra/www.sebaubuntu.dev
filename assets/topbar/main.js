@@ -4,32 +4,73 @@
 // SPDX-License-Identifier: MIT
 //
 
-let headElement = document.getElementById("topbar-container");
+let topbarContainerElement = document.getElementById("topbar-container");
+
+const PAGES = {
+	"Home": "/index.html",
+	"Blog": "/blog.html",
+	"Downloads": "/downloads.html",
+	"Files": "https://files.sebaubuntu.dev",
+	"Contact": "https://t.me/SebaUbuntu",
+}
 
 function main() {
-	let topbarElement = document.createElement("div");
-	topbarElement.innerHTML = `
-		<link rel="stylesheet" href="assets/topbar/main.css"/>
+	topbarContainerElement.innerHTML = `
+		<style>
+			#topbar {
+				flex: 0 1 auto;
+				margin: 0;
+				padding: 12px;
+				list-style-type: none;
+				overflow: hidden;
+			}
+			
+			#topbar li {
+				float: left;
+			}
+			
+			#topbar li a {
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+			}
+			
+			#topbar li a:hover {
+				background-color: #111;
+			}
+			
+			#topbar li a.active {
+				background-color: #333;
+			}
+			
+			#topbar li img {
+				display: block;
+				transform: translateY(5%);
+			}
+			
+			#topbar-left {
+				float: left;
+			}
+			
+			#topbar-right {
+				float: right;
+			}
+		</style>
+
 		<ul id="topbar">
 			<div id="topbar-left">
 				<li><img src="https://avatars3.githubusercontent.com/u/38215111?s=42&v=4"></li>
 				<li><a>SebaUbuntu</a></li>
 			</div>
 			<div id="topbar-right">
-				<li><a id="topbar-home" href="index.html">Home</a></li>
-				<li><a id="topbar-blog" href="blog.html">Blog</a></li>
-				<li><a id="topbar-downloads" href="downloads.html">Downloads</a></li>
-				<li><a id="topbar-files" href="https://files.sebaubuntu.dev">Files</a></li>
-				<li><a id="topbar-contact" href="https://t.me/SebaUbuntu">Contact</a></li>
+				${Object.keys(PAGES).map(page => `
+					<li><a href="${PAGES[page]}" class="${window.location.pathname === PAGES[page] ? "active" : ""}">${page}</a></li>
+				`).join("")}
 			</div>
 		</ul>
 	`;
-	headElement.appendChild(topbarElement);
-
-	// Set active button
-	let currentPage = `topbar-${document.currentScript.getAttribute("page")}`;
-	let currentButton = document.getElementById(currentPage);
-	currentButton.setAttribute("class", "active");
 }
 
 main();
