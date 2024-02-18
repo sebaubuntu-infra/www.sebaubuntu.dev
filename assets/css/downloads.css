@@ -4,7 +4,7 @@
 	display: flex;
 }
 
-#main-page>div {
+#main-page > div {
 	box-sizing: border-box;
 	display: inline-block;
 	overflow: auto;
@@ -24,6 +24,11 @@
 	padding: 8px 16px;
 }
 
+#devices-list > h1 {
+	/* Add padding for the title */
+	padding: 16px;
+}
+
 #devices-list div {
 	cursor: pointer;
 }
@@ -40,7 +45,7 @@
 	background-color: #333333;
 }
 
-#device-tab>div {
+#device-tab > div {
 	height: 100%;
 }
 
@@ -55,7 +60,7 @@
 	margin: 0;
 }
 
-#device-image-tab>img {
+#device-image-tab > img {
 	max-width: 100%;
 	max-height: 100%;
 }
@@ -70,7 +75,7 @@
 		display: block;
 	}
 
-	#main-page>div {
+	#main-page > div {
 		flex: none;
 		width: 100%;
 	}
@@ -83,7 +88,7 @@
 		height: auto;
 	}
 
-	#device-tab>div {
+	#device-tab > div {
 		float: none;
 		height: auto;
 		width: 100%;
