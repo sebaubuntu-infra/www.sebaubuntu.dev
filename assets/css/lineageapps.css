@@ -1,0 +1,163 @@
+/**
+ * SPDX-FileCopyrightText: 2024 Sebastiano Barezzi <seba@sebaubuntu.dev>
+ * SPDX-License-Identifier: MIT
+ */
+
+@import url("common.css");
+
+#main-page {
+	display: flex;
+}
+
+#main-page > div {
+	box-sizing: border-box;
+	display: inline-block;
+	overflow: auto;
+}
+
+#apps-list {
+	background-color: #111111;
+	border-radius: 8px;
+	flex: 1;
+	padding: 0px 16px;
+	vertical-align: top;
+}
+
+#apps-list > h1 {
+	/* Add padding for the title */
+	padding: 16px;
+}
+
+/* App header */
+.app-header {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.app-header * {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.app-header .material-icons {
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+/* App button */
+.app-button {
+	border-radius: 8px;
+	cursor: pointer;
+	display: flex;
+	margin: 16px 0px;
+	padding: 16px 0px;
+}
+
+.app-button * {
+	/* Cut text */
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.app-button:not(.selected):hover {
+	background-color: #222222;
+}
+
+.app-button.selected {
+	background-color: #333333;
+}
+
+.app-button > .image {
+	aspect-ratio: 1;
+	margin: 0px 16px;
+	height: inherit;
+}
+
+.app-button > .info {
+	align-self: center;
+	flex-grow: 1;
+	margin-right: 16px;
+	width: 100%;
+}
+
+.app-button > .info > .name,
+.app-button > .info > .description {
+	margin: 0px;
+}
+
+/* App builds tab */
+#app-builds {
+	flex: 3;
+	height: 100%;
+	padding: 0px 32px;
+}
+
+#app-builds > h1 {
+	/* Add padding for the title */
+	margin: 0px;
+	padding: 16px;
+}
+
+/* Build button */
+.build-entry {
+	background-color: #111111;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	margin: 16px 0px;
+	padding: 32px 0px;
+}
+
+.build-entry > * {
+	margin-left: 32px;
+	margin-right: 32px;
+}
+
+.build-entry > .description {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.build-entry > .branch,
+.build-entry > .commit {
+	/* Cut text */
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@media (max-width:700px) {
+	/* 
+	 * On mobile, we put apps list in upper part 
+	 * of the screen, and the infos on the bottom
+	*/
+
+	#main-page {
+		display: block;
+	}
+
+	#main-page > div {
+		flex: none;
+		width: 100%;
+	}
+
+	#apps-list {
+		height: 50%;
+	}
+
+	#app-builds {
+		height: auto;
+		width: 100%;
+		padding: 0px;
+	}
+
+	.build-entry {
+		float: none;
+		height: auto;
+		width: 100%;
+	}
+}

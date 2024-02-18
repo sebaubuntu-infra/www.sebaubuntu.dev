@@ -1,0 +1,32 @@
+<!--
+    SPDX-FileCopyrightText: The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="mask0_2583_4401" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="18" y="18" width="72" height="72">
+        <circle cx="54" cy="54" r="36" fill="black" />
+    </mask>
+    <g mask="url(#mask0_2583_4401)">
+        <rect width="108" height="108" fill="#CBDEFB" />
+        <path d="M118 85V93H46V77L78 45L118 85Z" fill="#00354A" />
+        <path d="M85 85V93H13V77L45 45L85 85Z" fill="#0092E4" />
+        <path d="M61 13L45 29L61 45L77 29L61 13Z" fill="#F09F38" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M108 0H0V108H108V0ZM34 38C31.7909 38 30 39.7909 30 42V66C30 68.2091 31.7909 70 34 70H74C76.2091 70 78 68.2091 78 66V42C78 39.7909 76.2091 38 74 38H34Z"
+            fill="white" />
+        <mask id="mask1_2583_4401" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="108"
+            height="108">
+            <rect width="108" height="108" fill="#C4C4C4" />
+        </mask>
+        <g mask="url(#mask1_2583_4401)">
+            <circle cx="28.54" cy="28.54" r="72" fill="url(#paint0_radial_2583_4401)" fill-opacity="0.6" />
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="paint0_radial_2583_4401" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(28.54 28.54) rotate(90) scale(72)">
+            <stop stop-color="white" stop-opacity="0.1" />
+            <stop offset="1" stop-color="white" stop-opacity="0" />
+        </radialGradient>
+    </defs>
+</svg>

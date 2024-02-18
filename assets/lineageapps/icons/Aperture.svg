@@ -1,0 +1,36 @@
+<!--
+    SPDX-FileCopyrightText: The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="mask0_2583_4349" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="18" y="18" width="72" height="72">
+        <circle cx="54" cy="54" r="36" fill="white" />
+    </mask>
+    <g mask="url(#mask0_2583_4349)">
+        <rect width="108" height="108" fill="#2A3232" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M52.4721 34C50.957 34 49.572 34.856 48.8944 36.2111L47 40L33.0838 43.2744C31.277 43.6995 30 45.3119 30 47.1681V66C30 68.2091 31.7909 70 34 70H74C76.2091 70 78 68.2091 78 66V46.5995C78 45.0187 77.0691 43.5863 75.6246 42.9442L69 40L67.1056 36.2111C66.428 34.856 65.043 34 63.5279 34H52.4721Z"
+            fill="#98A7A7" />
+        <path
+            d="M30 47.171C30 45.3138 31.2783 43.7008 33.0865 43.2767L38 42.124V70.0007H34C31.7909 70.0007 30 68.2099 30 66.0007V47.171Z"
+            fill="#D0D7D8" />
+        <circle cx="34" cy="47" r="2" fill="#0092E4" />
+        <circle cx="58" cy="54" r="14" fill="#2A3232" />
+        <circle cx="58" cy="55" r="17" fill="#596666" />
+        <circle cx="58" cy="55" r="15" fill="#2A3232" />
+        <mask id="mask1_2583_4349" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="108"
+            height="108">
+            <rect width="108" height="108" fill="#C4C4C4" />
+        </mask>
+        <g mask="url(#mask1_2583_4349)">
+            <circle cx="28.54" cy="28.54" r="72" fill="url(#paint0_radial_2583_4349)" fill-opacity="0.6" />
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="paint0_radial_2583_4349" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(28.54 28.54) rotate(90) scale(72)">
+            <stop stop-color="white" stop-opacity="0.1" />
+            <stop offset="1" stop-color="white" stop-opacity="0" />
+        </radialGradient>
+    </defs>
+</svg>

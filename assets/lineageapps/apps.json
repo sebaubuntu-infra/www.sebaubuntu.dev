@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Aperture",
+        "description": "Camera app"
+    },
+    {
+        "name": "Glimpse",
+        "description": "Gallery app"
+    },
+    {
+        "name": "Jelly",
+        "description": "Browser app"
+    }
+]

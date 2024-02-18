@@ -9,6 +9,7 @@ const PAGES = {
 	"Home": "/index.html",
 	"Blog": "/blog.html",
 	"Downloads": "/downloads.html",
+	"LineageOS apps": "/lineageapps.html",
 	"Files": "https://files.sebaubuntu.dev",
 	"Contact": "https://t.me/SebaUbuntu",
 }
