@@ -26,11 +26,13 @@ a:visited {
 	color: rgb(54, 182, 224);
 }
 
-a:hover {
+a:link:hover,
+a:visited:hover {
 	color: rgb(12, 82, 105);
 }
 
-a:active {
+a:link:active,
+a:visited:active {
 	color: rgb(7, 53, 68);
 }
 
