@@ -56,17 +56,20 @@ function getAppHeaderElement(app) {
  * @param {App} app The app to show the builds of
  */
 async function selectApp(app) {
-	// Mark the selected app button as selected and remove the selection from the others
+	// Show the builds of the selected app
+	let selectedButton = document.getElementById(`app-button-${app.name}`);
+	if (!selectedButton || selectedButton.classList.contains("selected")) {
+		return;
+	}
+
+	// Remove the selection class from all app buttons
 	let buttons = document.getElementsByClassName("app-button");
 	for (let button of buttons) {
 		button.classList.remove("selected");
 	}
 
-	// Show the builds of the selected app
-	let selectedButton = document.getElementById(`app-button-${app.name}`);
-	if (selectedButton) {
-		selectedButton.classList.add("selected");
-	}
+	// Mark the selected app button as selected
+	selectedButton.classList.add("selected");
 
 	appBuildsElement.innerHTML = "";
 
@@ -79,6 +82,7 @@ async function selectApp(app) {
 		return;
 	}
 
+	// Show the builds of the selected app
 	for (let build of builds) {
 		appBuildsElement.appendChild(buildToHtmlEntry(build));
 	}
