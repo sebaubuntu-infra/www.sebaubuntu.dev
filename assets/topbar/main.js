@@ -28,6 +28,7 @@ function main() {
 			#topbar > .logo {
 				border-radius: 8px;
 				margin: 4px;
+				width: 48px;
 			}
 
 			#topbar > .title {
@@ -62,7 +63,7 @@ function main() {
 		</style>
 
 		<div id="topbar">
-			<img class="logo" src="https://avatars3.githubusercontent.com/u/38215111?s=42&v=4">
+			<img class="logo" src="assets/logo.svg">
 			<a class="title">SebaUbuntu</a>
 			<div class="pages">
 				${Object.keys(PAGES).map(page => `
