@@ -1,6 +1,5 @@
 //
-// Copyright (C) 2023 Sebastiano Barezzi
-//
+// SPDX-FileCopyrightText: 2023-2024 Sebastiano Barezzi <seba@sebaubuntu.dev>
 // SPDX-License-Identifier: MIT
 //
 
@@ -18,58 +17,63 @@ function main() {
 	topbarContainerElement.innerHTML = `
 		<style>
 			#topbar {
-				flex: 0 1 auto;
-				margin: 0;
+				align-items: center;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
 				padding: 12px;
-				list-style-type: none;
-				overflow: hidden;
 			}
-			
-			#topbar li {
-				float: left;
+
+			#topbar > .logo {
+				border-radius: 8px;
+				margin: 4px;
 			}
-			
-			#topbar li a {
-				display: block;
+
+			#topbar > .title {
 				color: white;
-				text-align: center;
-				padding: 14px 16px;
-				text-decoration: none;
+				font-size: 20px;
+				padding: 12px;
 			}
-			
-			#topbar li a:hover {
+
+			#topbar > .pages {
+				/* Align to right */
+				align-self: flex-end;
+				display: flex;
+				margin-left: auto;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+
+			#topbar > .pages > .button {
+				border-radius: 8px;
+				color: white;
+				margin: 4px;
+				padding: 14px 16px;
+			}
+
+			#topbar > .pages > .button:hover {
 				background-color: #111;
 			}
-			
-			#topbar li a.active {
+
+			#topbar > .pages > .button.active {
 				background-color: #333;
-			}
-			
-			#topbar li img {
-				display: block;
-				transform: translateY(5%);
-			}
-			
-			#topbar-left {
-				float: left;
-			}
-			
-			#topbar-right {
-				float: right;
 			}
 		</style>
 
-		<ul id="topbar">
-			<div id="topbar-left">
-				<li><img src="https://avatars3.githubusercontent.com/u/38215111?s=42&v=4"></li>
-				<li><a>SebaUbuntu</a></li>
-			</div>
-			<div id="topbar-right">
+		<div id="topbar">
+			<img class="logo" src="https://avatars3.githubusercontent.com/u/38215111?s=42&v=4">
+			<a class="title">SebaUbuntu</a>
+			<div class="pages">
 				${Object.keys(PAGES).map(page => `
-					<li><a href="${PAGES[page]}" class="${window.location.pathname === PAGES[page] ? "active" : ""}">${page}</a></li>
+					<a
+						class="button ${window.location.pathname === PAGES[page] ? "active" : ""}"
+						href="${PAGES[page]}"
+					>
+						${page}
+					</a>
 				`).join("")}
 			</div>
-		</ul>
+		</div>
 	`;
 }
 
