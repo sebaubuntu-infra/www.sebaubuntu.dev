@@ -1,0 +1,34 @@
+/**
+ * SPDX-FileCopyrightText: 2024 Sebastiano Barezzi <seba@sebaubuntu.dev>
+ * SPDX-License-Identifier: MIT
+ */
+
+@import url("common.css");
+
+/* Information dashboard */
+.information-dashboard {
+	align-items: flex-start;
+	border-radius: 16px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	padding: 20px;
+	flex-wrap: wrap;
+}
+
+/* Information tab */
+.information-tab {
+	background-color: #111111;
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	margin: 16px;
+	padding: 16px;
+}
+
+.information-tab > * {
+	margin-bottom: 8px;
+	margin-left: 16px;
+	margin-right: 16px;
+	margin-top: 8px;
+}
