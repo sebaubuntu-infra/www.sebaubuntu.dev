@@ -57,11 +57,22 @@ function getAppHeaderElement(app) {
 	let div = document.createElement("div");
 	div.classList.add("app-header");
 	div.innerHTML = `
-		<h1 class="name">${app.name}</h1>
+		<div class="info">
+			<img class="icon" src="${app.getIconUrl()}" alt="${app.name}">
+			<h1 class="name">${app.name}</h1>
+		</div>
 		<div class="links">
+			<a class="repo-link" href="${app.getBranchUrl()}" target="_blank">
+				Branch: ${app.branch}
+				<span class="material-icons">open_in_new</span>
+			</a>
+			<a class="repo-link" href="${app.getRepoUrl()}/actions" target="_blank">
+				Actions
+				<span class="material-icons">open_in_new</span>
+			</a>
 			<a class="repo-link" href="${app.getRepoUrl()}" target="_blank">
-				GitHub
-				<a class="material-icons">open_in_new</a>
+				Repository
+				<span class="material-icons">open_in_new</span>
 			</a>
 		</div>
 	`;
@@ -95,7 +106,14 @@ async function selectApp(app) {
 
 	let builds = await app.getDefaultBranchBuilds();
 	if (!builds || builds.length === 0) {
-		appBuildsElement.innerHTML += "<p>No builds available</p>";
+		appBuildsElement.innerHTML += `
+			<p>No builds available, or an error occurred while fetching the builds.</p>
+
+			<p>
+				You've surely tripped GitHub rate limits, retry later or check the GitHub page
+				through the link above.
+			</p>
+		`;
 		return;
 	}
 

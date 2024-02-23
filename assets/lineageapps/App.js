@@ -65,6 +65,14 @@ export class App {
 	}
 
 	/**
+	 * Get the URL to the app's default branch.
+	 * @returns {string} The URL to the app's default branch
+	 */
+	getBranchUrl() {
+		return `${this.getRepoUrl()}/tree/${this.branch}`;
+	}
+
+	/**
 	 * Get the workflows for the app.
 	 * @returns {Promise<object?>} The workflow object or null if not found
 	 */

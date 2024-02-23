@@ -28,25 +28,6 @@
 	padding: 16px;
 }
 
-/* App header */
-.app-header {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.app-header * {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-}
-
-.app-header .material-icons {
-	margin-left: 8px;
-	margin-right: 8px;
-}
-
 /* App button */
 .app-button {
 	border-radius: 8px;
@@ -72,9 +53,7 @@
 }
 
 .app-button > .image {
-	aspect-ratio: 1;
 	margin: 0px 16px;
-	height: inherit;
 }
 
 .app-button > .info {
@@ -96,10 +75,45 @@
 	padding: 0px 32px;
 }
 
-#app-builds > h1 {
-	/* Add padding for the title */
-	margin: 0px;
-	padding: 16px;
+/* App header */
+.app-header {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.app-header .material-icons {
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.app-header div,
+.app-header > .links > .repo-link {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.app-header > .info > .icon {
+	width: 96px;
+}
+
+.app-header > .info > .name {
+	margin-left: 8px;
+	margin-right: 16px;
+}
+
+.app-header > .links {
+	flex-wrap: wrap;
+	margin-bottom: 8px;
+	margin-left: 8px;
+	margin-top: 8px;
+}
+
+.app-header > .links > .repo-link {
+	margin-left: 8px;
 }
 
 /* Build button */
@@ -152,6 +166,7 @@
 
 	#app-builds {
 		height: auto;
+		margin-top: 16px;
 		width: 100%;
 		padding: 0px;
 	}
