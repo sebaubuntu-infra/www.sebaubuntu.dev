@@ -122,8 +122,9 @@
 	margin-bottom: 0px;
 }
 
+.build-entry > .author,
 .build-entry > .branch,
-.build-entry > .commit {
+.build-entry > .date {
 	/* Cut text */
 	overflow: hidden;
 	white-space: nowrap;

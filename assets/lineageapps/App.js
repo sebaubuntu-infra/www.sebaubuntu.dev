@@ -112,18 +112,21 @@ export class App {
 			return null;
 		}
 
-		let defaultBranchRuns = runs.filter((run) => run.head_branch === Constants.DEFAULT_BRANCH);
+		return runs.map((run) => BuildInfo.fromRun(run, this));
+	}
 
-		let selectedRuns = defaultBranchRuns.length > 0 ? defaultBranchRuns : runs;
+	/**
+	 * Get the default branch builds for the app.
+	 * @returns {Promise<BuildInfo[]?>} The default branch builds or null if not found
+	 */
+	async getDefaultBranchBuilds() {
+		let builds = await this.getBuilds();
+		if (!builds) {
+			return null;
+		}
 
-		let builds = selectedRuns.map((run) => {
-			let branch = run.head_branch;
-			let headCommit = run.head_sha;
-			let description = run.display_title;
-			let htmlUrl = run.html_url;
-			return new BuildInfo(this, branch, headCommit, description, htmlUrl);
-		});
-
-		return builds;
+		return builds.filter(
+			(build) => build.branch === Constants.DEFAULT_BRANCH
+		);
 	}
 }

@@ -21,13 +21,30 @@ function buildToHtmlEntry(build) {
 	let div = document.createElement("div");
 	div.classList.add("build-entry");
 	div.innerHTML = `
-		<h2 class="description">${build.description}</h2>
+		<h2 class="description">
+			<a href="${build.getCommitUrl()}">
+				${build.description} (${build.headCommit.substring(0, 7)})
+			</a>
+		</h2>
 		<br>
+		<a class="author">Author: ${build.commitAuthorName} &lt;${build.commitAuthorEmail}&gt;</a>
 		<a class="branch" href="${build.getBranchUrl()}">Branch: ${build.branch}</a>
-		<a class="commit" href="${build.getCommitUrl()}">Head commit: ${build.headCommit}</a>
+		<a class="date">Build date: ${build.date.toLocaleString()}</a>
 		<br>
-		<a class="download" href="${build.htmlUrl}" target="_blank">Open workflow run</a>
 	`;
+
+	let downloadButtonElement = document.createElement("a");
+	downloadButtonElement.classList.add("download");
+	downloadButtonElement.href = "#";
+	downloadButtonElement.onclick = async (event) => {
+		event.preventDefault();
+
+		let downloadUrl = await build.getApkDownloadUrl();
+		window.open(downloadUrl, "_blank");
+	}
+	downloadButtonElement.innerHTML = "Download APK";
+	div.appendChild(downloadButtonElement);
+
 	return div;
 }
 
@@ -76,7 +93,7 @@ async function selectApp(app) {
 	// Show the app header
 	appBuildsElement.appendChild(getAppHeaderElement(app));
 
-	let builds = await app.getBuilds();
+	let builds = await app.getDefaultBranchBuilds();
 	if (!builds || builds.length === 0) {
 		appBuildsElement.innerHTML += "<p>No builds available</p>";
 		return;
