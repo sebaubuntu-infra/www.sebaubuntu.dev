@@ -23,26 +23,30 @@ function main() {
 				display: flex;
 				flex-direction: row;
 				flex-wrap: wrap;
+				justify-content: space-between;
 				padding: 12px;
 			}
 
-			#topbar > .logo {
+			#topbar > .info {
+				align-items: center;
+				display: flex;
+				flex-direction: row;
+			}
+
+			#topbar > .info > .logo {
 				border-radius: 8px;
 				margin: 4px;
 				width: 48px;
 			}
 
-			#topbar > .title {
+			#topbar > .info > .title {
 				color: white;
 				font-size: 20px;
 				padding: 12px;
 			}
 
 			#topbar > .pages {
-				/* Align to right */
-				align-self: flex-end;
 				display: flex;
-				margin-left: auto;
 				flex-direction: row;
 				flex-wrap: wrap;
 			}
@@ -64,8 +68,11 @@ function main() {
 		</style>
 
 		<div id="topbar">
-			<img class="logo" src="assets/logo.svg">
-			<a class="title">SebaUbuntu</a>
+			<div class="info">
+				<img class="logo" src="assets/logo.svg">
+				<a class="title">SebaUbuntu</a>
+			</div>
+
 			<div class="pages">
 				${Object.keys(PAGES).map(page => `
 					<a
