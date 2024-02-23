@@ -115,7 +115,9 @@ export class App {
 			return null;
 		}
 
-		return runs.map((run) => BuildInfo.fromRun(run, this));
+		return runs
+			.filter((run) => run.event === "push" && run.status === "completed")
+			.map((run) => BuildInfo.fromRun(run, this));
 	}
 
 	/**
