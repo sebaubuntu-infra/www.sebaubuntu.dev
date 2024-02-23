@@ -1,0 +1,30 @@
+<!--
+    SPDX-FileCopyrightText: The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="mask0_2583_4466" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="18" y="18" width="72" height="72">
+        <circle cx="54" cy="54" r="36" fill="black" />
+    </mask>
+    <g mask="url(#mask0_2583_4466)">
+        <rect width="108" height="108" fill="#551E22" />
+        <rect x="32" y="43" width="4" height="22" rx="2" fill="white" />
+        <rect x="40" y="48" width="4" height="12" rx="2" fill="white" />
+        <rect x="48" y="53" width="4" height="2" rx="1" fill="white" />
+        <circle cx="68" cy="54" r="10" fill="#F93B4F" />
+        <mask id="mask1_2583_4466" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="108"
+            height="108">
+            <rect width="108" height="108" fill="#C4C4C4" />
+        </mask>
+        <g mask="url(#mask1_2583_4466)">
+            <circle cx="28.54" cy="28.54" r="72" fill="url(#paint0_radial_2583_4466)" fill-opacity="0.6" />
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="paint0_radial_2583_4466" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(28.54 28.54) rotate(90) scale(72)">
+            <stop stop-color="white" stop-opacity="0.1" />
+            <stop offset="1" stop-color="white" stop-opacity="0" />
+        </radialGradient>
+    </defs>
+</svg>

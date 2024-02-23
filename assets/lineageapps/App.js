@@ -16,16 +16,27 @@ export class App {
 	 * Constructor for AppInfo.
 	 * @param {string} name The name of the app
 	 * @param {string} description A short description of the app
+	 * @param {string} repository The app's repository
+	 * @param {string} branch The app's default branch
 	 */
-	constructor(name, description) {
+	constructor(
+		name,
+		description,
+		repository,
+		branch,
+	) {
 		this.name = name;
 		this.description = description;
+		this.repository = repository;
+		this.branch = branch;
 	}
 
 	static fromJson(json) {
 		return new App(
 			json.name,
 			json.description,
+			json.repository,
+			json.branch,
 		);
 	}
 
@@ -38,19 +49,11 @@ export class App {
 	}
 
 	/**
-	 * Get the name of the app's repo.
-	 * @returns {string} The repository name
-	 */
-	getRepoName() {
-		return `${Constants.REPO_PREFIX}${this.name}`;
-	}
-
-	/**
 	 * Get the URL to the app's repo.
 	 * @returns {string} The URL to the app's repo
 	 */
 	getRepoUrl() {
-		return `${Constants.REPO_BASE_URL}/${Constants.ORGANIZATION}/${this.getRepoName()}`;
+		return `${Constants.REPO_BASE_URL}/${Constants.ORGANIZATION}/${this.repository}`;
 	}
 
 	/**
@@ -58,7 +61,7 @@ export class App {
 	 * @returns {string} The base URL for the app repo's API
 	 */
 	getAppRepoApiUrl() {
-		return `${Constants.REPO_API_BASE_URL}/${Constants.ORGANIZATION}/${this.getRepoName()}`;
+		return `${Constants.REPO_API_BASE_URL}/${Constants.ORGANIZATION}/${this.repository}`;
 	}
 
 	/**
@@ -126,7 +129,7 @@ export class App {
 		}
 
 		return builds.filter(
-			(build) => build.branch === Constants.DEFAULT_BRANCH
+			(build) => build.branch === this.branch
 		);
 	}
 }

@@ -1,0 +1,35 @@
+<!--
+    SPDX-FileCopyrightText: The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="mask0_2584_6398" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="18" y="18" width="72" height="72">
+        <circle cx="54" cy="54" r="36" fill="white" />
+    </mask>
+    <g mask="url(#mask0_2584_6398)">
+        <rect width="108" height="108" fill="white" />
+        <path
+            d="M30 61C30 60.4477 30.4477 60 31 60H37C37.5523 60 38 60.4477 38 61V67C38 67.5523 37.5523 68 37 68H32C30.8954 68 30 67.1046 30 66V61Z"
+            fill="#359944" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M30 42C30 40.8954 30.8954 40 32 40H37C37.5523 40 38 40.4477 38 41V47C38 47.5523 37.5523 48 37 48H31C30.4477 48 30 47.5523 30 47V42ZM40 51C40 50.4477 40.4477 50 41 50H47C47.5523 50 48 50.4477 48 51V57C48 57.5523 47.5523 58 47 58H41C40.4477 58 40 57.5523 40 57V51ZM41 40C40.4477 40 40 40.4477 40 41V47C40 47.5523 40.4477 48 41 48H47C47.5523 48 48 47.5523 48 47V41C48 40.4477 47.5523 40 47 40H41ZM50 51C50 50.4477 50.4477 50 51 50H57C57.5523 50 58 50.4477 58 51V57C58 57.5523 57.5523 58 57 58H51C50.4477 58 50 57.5523 50 57V51ZM51 40C50.4477 40 50 40.4477 50 41V47C50 47.5523 50.4477 48 51 48H57C57.5523 48 58 47.5523 58 47V41C58 40.4477 57.5523 40 57 40H51ZM40 61C40 60.4477 40.4477 60 41 60H67C67.5523 60 68 60.4477 68 61V67C68 67.5523 67.5523 68 67 68H41C40.4477 68 40 67.5523 40 67V61ZM61 50C60.4477 50 60 50.4477 60 51V57C60 57.5523 60.4477 58 61 58H67C67.5523 58 68 57.5523 68 57V51C68 50.4477 67.5523 50 67 50H61ZM60 41C60 40.4477 60.4477 40 61 40H67C67.5523 40 68 40.4477 68 41V47C68 47.5523 67.5523 48 67 48H61C60.4477 48 60 47.5523 60 47V41ZM71 40C70.4477 40 70 40.4477 70 41V47C70 47.5523 70.4477 48 71 48H77C77.5523 48 78 47.5523 78 47V42C78 40.8954 77.1046 40 76 40H71Z"
+            fill="#87BF7B" />
+        <path
+            d="M70 61C70 60.4477 70.4477 60 71 60H77C77.5523 60 78 60.4477 78 61V66C78 67.1046 77.1046 68 76 68H71C70.4477 68 70 67.5523 70 67V61Z"
+            fill="#1F6C37" />
+        <mask id="mask1_2584_6398" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="108"
+            height="108">
+            <rect width="108" height="108" fill="#C4C4C4" />
+        </mask>
+        <g mask="url(#mask1_2584_6398)">
+            <circle cx="28.54" cy="28.54" r="72" fill="url(#paint0_radial_2584_6398)" fill-opacity="0.6" />
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="paint0_radial_2584_6398" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(28.54 28.54) rotate(90) scale(72)">
+            <stop stop-color="white" stop-opacity="0.1" />
+            <stop offset="1" stop-color="white" stop-opacity="0" />
+        </radialGradient>
+    </defs>
+</svg>

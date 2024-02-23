@@ -20,19 +20,9 @@ export class Constants {
 	static ORGANIZATION = "LineageOS";
 
 	/**
-	 * The prefix for the app repos.
-	 */
-	static REPO_PREFIX = "android_packages_apps_";
-
-	/**
 	 * The name of the workflow which is used on push events.
 	 */
 	static GITHUB_WORKFLOW = "build";
-
-	/**
-	 * The default branch for the app repos.
-	 */
-	static DEFAULT_BRANCH = "lineage-21.0";
 
 	/**
 	 * The name of the artifact which contains the APK.

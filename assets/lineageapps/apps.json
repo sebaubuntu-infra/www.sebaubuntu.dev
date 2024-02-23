@@ -1,14 +1,44 @@
 [
     {
         "name": "Aperture",
-        "description": "Camera app"
+        "description": "Camera app",
+        "repository": "android_packages_apps_Aperture",
+        "branch": "lineage-21.0"
+    },
+    {
+        "name": "Eleven",
+        "description": "Music app",
+        "repository": "android_packages_apps_Eleven",
+        "branch": "lineage-21.0"
+    },
+    {
+        "name": "ExactCalculator",
+        "description": "Calculator app",
+        "repository": "android_packages_apps_ExactCalculator",
+        "branch": "lineage-21.0"
     },
     {
         "name": "Glimpse",
-        "description": "Gallery app"
+        "description": "Gallery app",
+        "repository": "android_packages_apps_Glimpse",
+        "branch": "lineage-21.0"
     },
     {
         "name": "Jelly",
-        "description": "Browser app"
+        "description": "Browser app",
+        "repository": "android_packages_apps_Jelly",
+        "branch": "lineage-21.0"
+    },
+    {
+        "name": "LatinIME",
+        "description": "Keyboard app",
+        "repository": "android_packages_inputmethods_LatinIME",
+        "branch": "lineage-21.0"
+    },
+    {
+        "name": "Recorder",
+        "description": "Audio recorder app",
+        "repository": "android_packages_apps_Recorder",
+        "branch": "lineage-21.0"
     }
 ]

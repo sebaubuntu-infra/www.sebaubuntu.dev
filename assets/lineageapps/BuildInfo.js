@@ -105,9 +105,8 @@ export class BuildInfo {
 	}
 
 	async getApkDownloadUrl() {
-		let repoName = this.app.getRepoName();
 		let apkArtifact = await this.getApkArtifact();
 
-		return `https://nightly.link/${Constants.ORGANIZATION}/${repoName}/suites/${this.suiteId}/artifacts/${apkArtifact.id}`
+		return `https://nightly.link/${Constants.ORGANIZATION}/${this.app.repository}/suites/${this.suiteId}/artifacts/${apkArtifact.id}`
 	}
 }
