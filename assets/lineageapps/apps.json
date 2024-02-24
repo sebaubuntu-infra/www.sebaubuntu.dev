@@ -7,13 +7,6 @@
         "artifact_name": "app-debug.apk"
     },
     {
-        "name": "Eleven",
-        "description": "Music app",
-        "repository": "android_packages_apps_Eleven",
-        "branch": "lineage-21.0",
-        "artifact_name": "Eleven-debug.apk"
-    },
-    {
         "name": "ExactCalculator",
         "description": "Calculator app",
         "repository": "android_packages_apps_ExactCalculator",
