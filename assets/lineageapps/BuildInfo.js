@@ -98,7 +98,7 @@ export class BuildInfo {
 
 		let artifacts = await response.json();
 		let apkArtifact = artifacts.artifacts.find(
-			artifact => artifact.name === Constants.ARTIFACT_NAME
+			artifact => artifact.name === this.app.artifactName
 		);
 
 		return apkArtifact;

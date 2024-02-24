@@ -23,9 +23,4 @@ export class Constants {
 	 * The name of the workflow which is used on push events.
 	 */
 	static GITHUB_WORKFLOW = "build";
-
-	/**
-	 * The name of the artifact which contains the APK.
-	 */
-	static ARTIFACT_NAME = "app-debug.apk";
 }

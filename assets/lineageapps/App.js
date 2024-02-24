@@ -18,17 +18,20 @@ export class App {
 	 * @param {string} description A short description of the app
 	 * @param {string} repository The app's repository
 	 * @param {string} branch The app's default branch
+	 * @param {string} artifactName The name of the artifact which contains the APK
 	 */
 	constructor(
 		name,
 		description,
 		repository,
 		branch,
+		artifactName,
 	) {
 		this.name = name;
 		this.description = description;
 		this.repository = repository;
 		this.branch = branch;
+		this.artifactName = artifactName;
 	}
 
 	static fromJson(json) {
@@ -37,6 +40,7 @@ export class App {
 			json.description,
 			json.repository,
 			json.branch,
+			json.artifact_name,
 		);
 	}
 
