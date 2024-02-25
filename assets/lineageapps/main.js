@@ -12,6 +12,8 @@ const appBuildsElement = document.getElementById("app-builds");
 
 const APPS_JSON_PATH = "assets/lineageapps/apps.json";
 
+const QUERY_KEY_APP = "app";
+
 /**
  * Convert a build to an HTML entry.
  * @param {BuildInfo} build The build to convert to HTML
@@ -157,6 +159,17 @@ async function main() {
 	appsListElement.innerHTML = "<h1>Apps</h1>";
 	for (let app of apps) {
 		appsListElement.appendChild(appToHtmlButton(app));
+	}
+
+	let queryString = window.location.search;
+	let urlParams = new URLSearchParams(queryString);
+
+	if (urlParams.has(QUERY_KEY_APP)) {
+		let appName = urlParams.get(QUERY_KEY_APP);
+		let app = apps.find((app) => app.name === appName);
+		if (app) {
+			selectApp(app);
+		}
 	}
 }
 
