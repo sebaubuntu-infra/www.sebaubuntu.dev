@@ -10,15 +10,22 @@
 	background-color: #111111;
 	border-radius: 5px;
 	padding: 10px 20px;
-	margin: auto;
-	width: calc(100% - 40px - 5%);
+	margin: 0px 16px;
 }
 
-.post-card-info svg {
+.post-card-info {
+	display: flex;
+	align-items: center;
+}
+
+.post-card-info > a {
+	margin: 0 16px 0 4px;
+}
+
+.post-card-info > img {
 	display: inline-block;
 	vertical-align: top;
 	font-size: 1.375rem;
-	margin: 0.125rem;
 	fill: white;
 	height: 1.15rem;
 	width: auto;
@@ -30,8 +37,6 @@
 	background-color: #111111;
 	border-radius: 5px;
 	padding: 10px 20px;
-	margin: auto;
-	width: calc(100% - 40px);
 }
 
 #post-content {
