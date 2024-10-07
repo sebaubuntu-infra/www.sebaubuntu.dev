@@ -1,0 +1,16 @@
+/**
+ * SPDX-FileCopyrightText: 2024 Sebastiano Barezzi <seba@sebaubuntu.dev>
+ * SPDX-License-Identifier: MIT
+ */
+
+@import url("common.css");
+
+.title-header {
+    align-items: center;
+    display: flex;
+}
+
+.athena-logo {
+    width: 48px;
+    margin: 0px 16px 0px 0px;
+}

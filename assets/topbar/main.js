@@ -10,6 +10,7 @@ const PAGES = {
 	"Blog": ["/blog.html"],
 	"Downloads": ["/downloads.html"],
 	"LineageOS apps": ["/lineageapps.html"],
+	"Athena": ["/athena.html", "/athena/privacy_policy.html"],
 	"Status": ["/status.html"],
 	"Files": ["https://files.sebaubuntu.dev"],
 	"Contact": ["https://t.me/SebaUbuntu"],

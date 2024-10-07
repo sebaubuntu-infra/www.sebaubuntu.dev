@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+    SPDX-FileCopyrightText: Sebastiano Barezzi
+    SPDX-License-Identifier: Apache-2.0
+-->
+<svg height="24" viewBox="0 0 24 24" width="24" fill="#e8eaed" version="1.1" id="svg2"
+    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+    <defs id="defs2" />
+    <path
+        d="m 8,9 h 9 V 8 H 8 C 7.45,8 7,8.45 7,9 v 5.5 H 6 V 16 h 7 V 14.5 H 8 Z m 9.5,1 h -3 C 14.225,10 14,10.225 14,10.5 v 5 c 0,0.275 0.225,0.5 0.5,0.5 h 3 c 0.275,0 0.5,-0.225 0.5,-0.5 v -5 C 18,10.225 17.775,10 17.5,10 Z M 17,14.5 H 15 V 11 h 2 z"
+        id="path2" style="display:inline;fill:#3fda83;fill-opacity:1;stroke-width:0.5" />
+</svg>
