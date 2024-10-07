@@ -69,7 +69,7 @@ function main() {
 
 		<div id="topbar">
 			<div class="info">
-				<img class="logo" src="assets/logo.svg">
+				<img class="logo" src="/assets/logo.svg">
 				<a class="title">SebaUbuntu</a>
 			</div>
 
