@@ -1,0 +1,35 @@
+<!--
+    SPDX-FileCopyrightText: The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="mask0_3838_22757" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="18" y="18" width="72" height="72">
+        <circle cx="54" cy="54" r="36" fill="white" />
+    </mask>
+    <g mask="url(#mask0_3838_22757)">
+        <rect width="108" height="108" fill="white" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M45 44V55.5155C43.5699 54.5583 41.8501 54 40 54C35.0294 54 31 58.0294 31 63C31 67.9706 35.0294 72 40 72C44.9706 72 49 67.9706 49 63V48C49 45.7909 50.7909 44 53 44H67C69.2091 44 71 45.7909 71 48V55.5155C69.5699 54.5583 67.8501 54 66 54C61.0294 54 57 58.0294 57 63C57 67.9706 61.0294 72 66 72C70.9706 72 75 67.9706 75 63V44C75 39.5817 71.4183 36 67 36H53C48.5817 36 45 39.5817 45 44ZM71 63C71 60.2386 68.7614 58 66 58C63.2386 58 61 60.2386 61 63C61 65.7614 63.2386 68 66 68C68.7614 68 71 65.7614 71 63ZM40 68C42.7614 68 45 65.7614 45 63C45 60.2386 42.7614 58 40 58C37.2386 58 35 60.2386 35 63C35 65.7614 37.2386 68 40 68Z"
+            fill="#A92D63" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M40 68C42.7614 68 45 65.7614 45 63C45 60.2386 42.7614 58 40 58C37.2386 58 35 60.2386 35 63C35 65.7614 37.2386 68 40 68ZM66 68C68.7614 68 71 65.7614 71 63C71 60.2386 68.7614 58 66 58C63.2386 58 61 60.2386 61 63C61 65.7614 63.2386 68 66 68Z"
+            fill="#521E35" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M40 72C44.9706 72 49 67.9706 49 63C49 58.0294 44.9706 54 40 54C35.0294 54 31 58.0294 31 63C31 67.9706 35.0294 72 40 72ZM66 72C70.9706 72 75 67.9706 75 63C75 58.0294 70.9706 54 66 54C61.0294 54 57 58.0294 57 63C57 67.9706 61.0294 72 66 72Z"
+            fill="#F73487" />
+        <mask id="mask1_3838_22757" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="108"
+            height="108">
+            <rect width="108" height="108" fill="#C4C4C4" />
+        </mask>
+        <g mask="url(#mask1_3838_22757)">
+            <circle cx="28.5391" cy="28.54" r="72" fill="url(#paint0_radial_3838_22757)" fill-opacity="0.6" />
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="paint0_radial_3838_22757" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(28.5391 28.54) rotate(90) scale(72)">
+            <stop stop-color="white" stop-opacity="0.1" />
+            <stop offset="1" stop-color="white" stop-opacity="0" />
+        </radialGradient>
+    </defs>
+</svg>
