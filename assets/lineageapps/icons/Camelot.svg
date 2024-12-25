@@ -1,0 +1,35 @@
+<!--
+    SPDX-FileCopyrightText: The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="mask0_3863_3774" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="18" y="18" width="72" height="72">
+        <circle cx="54" cy="54" r="36" fill="black" />
+    </mask>
+    <g mask="url(#mask0_3863_3774)">
+        <rect width="108" height="108" fill="#F93B4F" />
+        <circle cx="54.0039" cy="70" r="24" fill="#FFD3CC" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M108 0H0V108H108V0ZM42 30C39.7909 30 38 31.7909 38 34V74C38 76.2091 39.7909 78 42 78H66C68.2091 78 70 76.2091 70 74V34C70 31.7909 68.2091 30 66 30H42Z"
+            fill="white" />
+        <path d="M58.0039 30H70.0039V42L58.0039 30Z" fill="white" />
+        <path d="M70.0039 42L62.0039 42C59.7948 42 58.0039 40.2091 58.0039 38L58.0039 30L70.0039 42Z" fill="#551E22" />
+        <path
+            d="M45.3477 66.4519H46.9436V63.0079H48.8475C49.2997 63.0079 49.6787 62.8551 49.9844 62.5493C50.2905 62.2433 50.4435 61.8642 50.4435 61.412V59.5081C50.4435 59.0559 50.2905 58.6769 49.9844 58.3712C49.6787 58.0651 49.2997 57.9121 48.8475 57.9121H45.3477V66.4519ZM46.9436 61.412V59.5081H48.8475V61.412H46.9436ZM52.2356 66.4519H55.7073C56.1461 66.4519 56.5218 66.299 56.8346 65.9933C57.1471 65.6872 57.3033 65.3081 57.3033 64.8559V59.5081C57.3033 59.0559 57.1471 58.6769 56.8346 58.3712C56.5218 58.0651 56.1461 57.9121 55.7073 57.9121H52.2356V66.4519ZM53.8316 64.8559V59.5081H55.7073V64.8559H53.8316ZM59.2353 66.4519H60.8313V63.0079H62.7914V61.412H60.8313V59.5081H62.7914V57.9121H59.2353V66.4519Z"
+            fill="#551E22" />
+        <mask id="mask1_3863_3774" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="108"
+            height="108">
+            <rect width="108" height="108" fill="#C4C4C4" />
+        </mask>
+        <g mask="url(#mask1_3863_3774)">
+            <circle cx="28.5391" cy="28.54" r="72" fill="url(#paint0_radial_3863_3774)" fill-opacity="0.6" />
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="paint0_radial_3863_3774" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(28.5391 28.54) rotate(90) scale(72)">
+            <stop stop-color="white" stop-opacity="0.1" />
+            <stop offset="1" stop-color="white" stop-opacity="0" />
+        </radialGradient>
+    </defs>
+</svg>

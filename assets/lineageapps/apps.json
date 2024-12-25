@@ -3,49 +3,56 @@
         "name": "Aperture",
         "description": "Camera app",
         "repository": "android_packages_apps_Aperture",
-        "branch": "lineage-22.0",
+        "branch": "lineage-22.1",
+        "artifact_name": "app-debug.apk"
+    },
+    {
+        "name": "Camelot",
+        "description": "PDF viewer",
+        "repository": "android_packages_apps_Camelot",
+        "branch": "lineage-22.1",
         "artifact_name": "app-debug.apk"
     },
     {
         "name": "ExactCalculator",
         "description": "Calculator app",
         "repository": "android_packages_apps_ExactCalculator",
-        "branch": "lineage-22.0",
+        "branch": "lineage-22.1",
         "artifact_name": "ExactCalculator-debug.apk"
     },
     {
         "name": "Glimpse",
         "description": "Gallery app",
         "repository": "android_packages_apps_Glimpse",
-        "branch": "lineage-22.0",
+        "branch": "lineage-22.1",
         "artifact_name": "app-debug.apk"
     },
     {
         "name": "Jelly",
         "description": "Browser app",
         "repository": "android_packages_apps_Jelly",
-        "branch": "lineage-22.0",
+        "branch": "lineage-22.1",
         "artifact_name": "app-debug.apk"
     },
     {
         "name": "LatinIME",
         "description": "Keyboard app",
         "repository": "android_packages_inputmethods_LatinIME",
-        "branch": "lineage-22.0",
+        "branch": "lineage-22.1",
         "artifact_name": "LatinIME-debug.apk"
     },
     {
         "name": "Recorder",
         "description": "Audio recorder app",
         "repository": "android_packages_apps_Recorder",
-        "branch": "lineage-22.0",
+        "branch": "lineage-22.1",
         "artifact_name": "app-debug.apk"
     },
     {
         "name": "Twelve",
-        "description": "Audio player app",
+        "description": "Music player app",
         "repository": "android_packages_apps_Twelve",
-        "branch": "lineage-22.0",
+        "branch": "lineage-22.1",
         "artifact_name": "app-debug.apk"
     }
 ]
