@@ -98,7 +98,7 @@ export class BuildInfo {
 
 		let artifacts = await response.json();
 		let apkArtifact = artifacts.artifacts.find(
-			artifact => artifact.name === this.app.artifactName
+			artifact => artifact.name.endsWith(Constants.ARTIFACT_SUFFIX)
 		);
 
 		return apkArtifact;
@@ -106,6 +106,9 @@ export class BuildInfo {
 
 	async getApkDownloadUrl() {
 		let apkArtifact = await this.getApkArtifact();
+		if (!apkArtifact) {
+			return null;
+		}
 
 		return `https://nightly.link/${Constants.ORGANIZATION}/${this.app.repository}/suites/${this.suiteId}/artifacts/${apkArtifact.id}`
 	}

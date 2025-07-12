@@ -5,6 +5,7 @@
 
 import { BuildInfo } from "./BuildInfo.js";
 import { Constants } from "./Constants.js";
+import { VersionUtils } from "./VersionUtils.js";
 
 export class App {
 	/**
@@ -17,21 +18,15 @@ export class App {
 	 * @param {string} name The name of the app
 	 * @param {string} description A short description of the app
 	 * @param {string} repository The app's repository
-	 * @param {string} branch The app's default branch
-	 * @param {string} artifactName The name of the artifact which contains the APK
 	 */
 	constructor(
 		name,
 		description,
 		repository,
-		branch,
-		artifactName,
 	) {
 		this.name = name;
 		this.description = description;
 		this.repository = repository;
-		this.branch = branch;
-		this.artifactName = artifactName;
 	}
 
 	static fromJson(json) {
@@ -39,8 +34,6 @@ export class App {
 			json.name,
 			json.description,
 			json.repository,
-			json.branch,
-			json.artifact_name,
 		);
 	}
 
@@ -66,14 +59,6 @@ export class App {
 	 */
 	getAppRepoApiUrl() {
 		return `${Constants.REPO_API_BASE_URL}/${Constants.ORGANIZATION}/${this.repository}`;
-	}
-
-	/**
-	 * Get the URL to the app's default branch.
-	 * @returns {string} The URL to the app's default branch
-	 */
-	getBranchUrl() {
-		return `${this.getRepoUrl()}/tree/${this.branch}`;
 	}
 
 	/**
@@ -127,23 +112,23 @@ export class App {
 			return null;
 		}
 
-		return runs
+		let builds = runs
 			.filter((run) => run.event === "push" && run.status === "completed")
 			.map((run) => BuildInfo.fromRun(run, this));
-	}
 
-	/**
-	 * Get the default branch builds for the app.
-	 * @returns {Promise<BuildInfo[]?>} The default branch builds or null if not found
-	 */
-	async getDefaultBranchBuilds() {
-		let builds = await this.getBuilds();
-		if (!builds) {
-			return null;
-		}
+		// Get a unique list of versions
+		let branches = new Set(
+			builds.map((build) => build.branch)
+		);
+
+		// Sort the branches
+		branches = Array.from(branches).sort(VersionUtils.lineageVersionComparator);
+
+		// Last branch is the latest
+		let branch = branches[branches.length - 1];
 
 		return builds.filter(
-			(build) => build.branch === this.branch
+			(build) => build.branch === branch
 		);
 	}
 }

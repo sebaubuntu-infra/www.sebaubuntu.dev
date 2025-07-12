@@ -5,6 +5,7 @@
 
 import { App } from "./App.js";
 import { BuildInfo } from "./BuildInfo.js";
+import { QueueScheduler } from "./QueueScheduler.js";
 
 // Elements
 const appsListElement = document.getElementById("apps-list");
@@ -13,6 +14,8 @@ const appBuildsElement = document.getElementById("app-builds");
 const APPS_JSON_PATH = "assets/lineageapps/apps.json";
 
 const QUERY_KEY_APP = "app";
+
+const selectAppQueueScheduler = new QueueScheduler(async (app) => await selectApp(app));
 
 /**
  * Convert a build to an HTML entry.
@@ -42,6 +45,11 @@ function buildToHtmlEntry(build) {
 		event.preventDefault();
 
 		let downloadUrl = await build.getApkDownloadUrl();
+		if (!downloadUrl) {
+			alert("No APK available for this build.");
+			return;
+		}
+
 		window.open(downloadUrl, "_blank");
 	}
 	downloadButtonElement.innerHTML = "Download APK";
@@ -64,10 +72,6 @@ function getAppHeaderElement(app) {
 			<h1 class="name">${app.name}</h1>
 		</div>
 		<div class="links">
-			<a class="repo-link" href="${app.getBranchUrl()}" target="_blank">
-				Branch: ${app.branch}
-				<span class="material-icons">open_in_new</span>
-			</a>
 			<a class="repo-link" href="${app.getRepoUrl()}/actions" target="_blank">
 				Actions
 				<span class="material-icons">open_in_new</span>
@@ -106,7 +110,7 @@ async function selectApp(app) {
 	// Show the app header
 	appBuildsElement.appendChild(getAppHeaderElement(app));
 
-	let builds = await app.getDefaultBranchBuilds();
+	let builds = await app.getBuilds();
 	if (!builds || builds.length === 0) {
 		appBuildsElement.innerHTML += `
 			<p>No builds available, or an error occurred while fetching the builds.</p>
@@ -136,7 +140,7 @@ function appToHtmlButton(app) {
 	// Set the ID of the app button to the app name
 	div.id = `app-button-${app.name}`;
 	div.classList.add("app-button");
-	div.onclick = () => selectApp(app);
+	div.onclick = () => selectAppQueueScheduler.schedule(app);
 	div.innerHTML = `
 		<img class="image" src="${app.getIconUrl()}" alt="${app.name}">
 		<div class="info">

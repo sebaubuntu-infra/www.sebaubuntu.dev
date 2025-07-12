@@ -2,57 +2,41 @@
     {
         "name": "Aperture",
         "description": "Camera app",
-        "repository": "android_packages_apps_Aperture",
-        "branch": "lineage-22.1",
-        "artifact_name": "app-debug.apk"
+        "repository": "android_packages_apps_Aperture"
     },
     {
         "name": "Camelot",
         "description": "PDF viewer",
-        "repository": "android_packages_apps_Camelot",
-        "branch": "lineage-22.1",
-        "artifact_name": "app-debug.apk"
+        "repository": "android_packages_apps_Camelot"
     },
     {
         "name": "ExactCalculator",
         "description": "Calculator app",
-        "repository": "android_packages_apps_ExactCalculator",
-        "branch": "lineage-22.1",
-        "artifact_name": "ExactCalculator-debug.apk"
+        "repository": "android_packages_apps_ExactCalculator"
     },
     {
         "name": "Glimpse",
         "description": "Gallery app",
-        "repository": "android_packages_apps_Glimpse",
-        "branch": "lineage-22.1",
-        "artifact_name": "app-debug.apk"
+        "repository": "android_packages_apps_Glimpse"
     },
     {
         "name": "Jelly",
         "description": "Browser app",
-        "repository": "android_packages_apps_Jelly",
-        "branch": "lineage-22.1",
-        "artifact_name": "app-debug.apk"
+        "repository": "android_packages_apps_Jelly"
     },
     {
         "name": "LatinIME",
         "description": "Keyboard app",
-        "repository": "android_packages_inputmethods_LatinIME",
-        "branch": "lineage-22.1",
-        "artifact_name": "LatinIME-debug.apk"
+        "repository": "android_packages_inputmethods_LatinIME"
     },
     {
         "name": "Recorder",
         "description": "Audio recorder app",
-        "repository": "android_packages_apps_Recorder",
-        "branch": "lineage-22.1",
-        "artifact_name": "app-debug.apk"
+        "repository": "android_packages_apps_Recorder"
     },
     {
         "name": "Twelve",
         "description": "Music player app",
-        "repository": "android_packages_apps_Twelve",
-        "branch": "lineage-22.1",
-        "artifact_name": "app-debug.apk"
+        "repository": "android_packages_apps_Twelve"
     }
 ]
