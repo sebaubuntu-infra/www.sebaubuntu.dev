@@ -10,44 +10,44 @@
 
 html,
 body {
-	box-sizing: border-box;
-	height: 100%;
-	margin: 0;
-	width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    width: 100%;
 }
 
 body {
-	background-color: black;
-	color: white;
-	display: flex;
-	flex-flow: column;
-	font-family: 'Product Sans';
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-flow: column;
+    font-family: 'Product Sans';
 }
 
 a {
-	background-color: transparent;
-	text-decoration: none;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 a:link,
 a:visited {
-	color: rgb(54, 182, 224);
+    color: rgb(54, 182, 224);
 }
 
 a:link:hover,
 a:visited:hover {
-	color: rgb(12, 82, 105);
+    color: rgb(12, 82, 105);
 }
 
 a:link:active,
 a:visited:active {
-	color: rgb(7, 53, 68);
+    color: rgb(7, 53, 68);
 }
 
 #main-page {
-	box-sizing: border-box;
-	flex: 1;
-	min-height: 0;
-	min-width: 0;
-	padding: 18px 36px 36px;
+    box-sizing: border-box;
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
+    padding: 18px 36px 36px;
 }

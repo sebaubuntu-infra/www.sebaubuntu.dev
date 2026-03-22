@@ -9,69 +9,69 @@
  * process the latest selection without worrying about previous selections, which will be discarded.
  */
 export class QueueScheduler {
-	/**
-	 * Callback definition for the async task to execute.
-	 * 
-	 * @callback QueueSchedulerCallback
-	 * @param {...any} args The arguments to pass to the callback
-	 * @returns {Promise<void>} The promise returned by the callback
-	 */
+    /**
+     * Callback definition for the async task to execute.
+     * 
+     * @callback QueueSchedulerCallback
+     * @param {...any} args The arguments to pass to the callback
+     * @returns {Promise<void>} The promise returned by the callback
+     */
 
-	/**
-	 * Constructor for QueueScheduler.
-	 *
-	 * @param {QueueSchedulerCallback} callback The async callback to execute with the latest
-	 *   arguments
-	 */
-	constructor(callback) {
-		this.callback = callback;
+    /**
+     * Constructor for QueueScheduler.
+     *
+     * @param {QueueSchedulerCallback} callback The async callback to execute with the latest
+     *   arguments
+     */
+    constructor(callback) {
+        this.callback = callback;
 
-		/**
-		 * The latest arguments to pass to the callback.
-		 *
-		 * @type {any[]|null}
-		 */
-		this.args = null;
+        /**
+         * The latest arguments to pass to the callback.
+         *
+         * @type {any[]|null}
+         */
+        this.args = null;
 
-		/**
-		 * Whether the scheduler is currently running a task.
-		 */
-		this.running = false;
-	}
+        /**
+         * Whether the scheduler is currently running a task.
+         */
+        this.running = false;
+    }
 
-	/**
-	 * Schedule a new task with the latest arguments.
-	 *
-	 * @param {...any} args The arguments to pass to the callback
-	 */
-	schedule(...args) {
-		this.args = args;
+    /**
+     * Schedule a new task with the latest arguments.
+     *
+     * @param {...any} args The arguments to pass to the callback
+     */
+    schedule(...args) {
+        this.args = args;
 
-		if (this.running) {
-			return;
-		}
+        if (this.running) {
+            return;
+        }
 
-		this.executeCallback();
-	}
+        this.executeCallback();
+    }
 
-	/**
-	 * Execute the callback with the latest arguments.
-	 */
-	async executeCallback() {
-		this.running = true;
+    /**
+     * Execute the callback with the latest arguments.
+     */
+    async executeCallback() {
+        this.running = true;
 
-		while (true) {
-			let args = this.args;
-			if (args === null) {
-				return null;
-			}
+        while (true) {
+            let args = this.args;
+            if (args === null) {
+                return null;
+            }
 
-			await this.callback(...args);
+            await this.callback(...args);
 
-			if (this.args === args) {
-				this.running = false;
-				break;
-			}
-		}
-	}
+            if (this.args === args) {
+                this.running = false;
+                break;
+            }
+        }
+    }
 }

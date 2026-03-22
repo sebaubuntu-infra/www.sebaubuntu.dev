@@ -6,101 +6,101 @@
 @import url("common.css");
 
 #main-page {
-	display: flex;
+    display: flex;
 }
 
 #main-page > div {
-	box-sizing: border-box;
-	display: inline-block;
-	overflow: auto;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: auto;
 }
 
 #devices-list {
-	background-color: #111111;
-	border-radius: 8px;
-	flex: 1;
-	padding: 0px 16px;
-	vertical-align: top;
+    background-color: #111111;
+    border-radius: 8px;
+    flex: 1;
+    padding: 0px 16px;
+    vertical-align: top;
 }
 
 #device-tab {
-	flex: 3;
-	height: 100%;
-	padding: 8px 16px;
+    flex: 3;
+    height: 100%;
+    padding: 8px 16px;
 }
 
 #devices-list > h1 {
-	/* Add padding for the title */
-	padding: 16px;
+    /* Add padding for the title */
+    padding: 16px;
 }
 
 #devices-list div {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 #devices-list div p {
-	padding: 0px 16px;
+    padding: 0px 16px;
 }
 
 #devices-list .device-not-active:hover {
-	background-color: #222222;
+    background-color: #222222;
 }
 
 #devices-list .device-active {
-	background-color: #333333;
+    background-color: #333333;
 }
 
 #device-tab > div {
-	height: 100%;
+    height: 100%;
 }
 
 #device-info-tab {
-	float: left;
-	width: 75%;
+    float: left;
+    width: 75%;
 }
 
 #device-image-tab {
-	float: right;
-	width: 25%;
-	margin: 0;
+    float: right;
+    width: 25%;
+    margin: 0;
 }
 
 #device-image-tab > img {
-	max-width: 100%;
-	max-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 @media (max-width:700px) {
-	/* 
-	 * On mobile, we put devices list in upper part 
-	 * of the screen, and the infos on the bottom
-	*/
+    /* 
+     * On mobile, we put devices list in upper part 
+     * of the screen, and the infos on the bottom
+    */
 
-	#main-page {
-		display: block;
-	}
+    #main-page {
+        display: block;
+    }
 
-	#main-page > div {
-		flex: none;
-		width: 100%;
-	}
+    #main-page > div {
+        flex: none;
+        width: 100%;
+    }
 
-	#devices-list {
-		height: 50%;
-	}
+    #devices-list {
+        height: 50%;
+    }
 
-	#device-tab {
-		height: auto;
-	}
+    #device-tab {
+        height: auto;
+    }
 
-	#device-tab > div {
-		float: none;
-		height: auto;
-		width: 100%;
-	}
+    #device-tab > div {
+        float: none;
+        height: auto;
+        width: 100%;
+    }
 
-	#device-image-tab {
-		margin: 20px 0px;
-		text-align: center;
-	}
+    #device-image-tab {
+        margin: 20px 0px;
+        text-align: center;
+    }
 }
