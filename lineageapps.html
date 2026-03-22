@@ -4,36 +4,38 @@
     SPDX-License-Identifier: MIT
 -->
 <html lang="en">
-    <link rel="stylesheet" href="/assets/css/lineageapps.css"/>
 
-    <head prefix="og: http://ogp.me/ns#">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
 
-        <meta property="og:title" content="SebaUbuntu - LineageOS apps" />
-        <meta property="og:description" content="LineageOS apps" />
-        <meta property="og:image" content="/assets/logo.svg" />
-        <meta property="og:url" content="https://sebaubuntu.dev/lineageapps.html" />
+    <meta property="og:title" content="LineageOS apps - SebaUbuntu" />
+    <meta property="og:description" content="LineageOS apps" />
+    <meta property="og:image" content="/assets/logo.svg" />
+    <meta property="og:url" content="https://sebaubuntu.dev/lineageapps.html" />
 
-        <title>SebaUbuntu - LineageOS apps</title>
-        <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
-    </head>
+    <title>LineageOS apps - SebaUbuntu</title>
+    <link rel="stylesheet" href="/assets/css/lineageapps.css" />
+    <script src="/assets/lineageapps/main.js" type="module"></script>
+</head>
 
-    <body>
-        <div id="topbar-container">
-            <script src="/assets/topbar/main.js"></script>
+<body>
+    <div id="topbar-container">
+        <script src="/assets/topbar/main.js" type="module"></script>
+    </div>
+
+    <div id="main-page">
+        <div id="apps-list">
+            <h1>Apps</h1>
+            <h2>Loading...</h2>
         </div>
-        <div id="main-page">
-            <div id="apps-list">
-                <h1>Apps</h1>
-                <h2>Loading...</h2>
-            </div>
-            <div id="app-builds">
-                <h1>Please select an app from the apps menu</h1>
-            </div>
-        </div>
-    </body>
 
-    <script type="module" src="/assets/lineageapps/main.js"></script>
+        <div id="app-builds">
+            <h1>Please select an app from the apps menu</h1>
+        </div>
+    </div>
+</body>
+
 </html>
