@@ -1,5 +1,5 @@
 //
-// SPDX-FileCopyrightText: 2023-2024 Sebastiano Barezzi <seba@sebaubuntu.dev>
+// SPDX-FileCopyrightText: Sebastiano Barezzi <seba@sebaubuntu.dev>
 // SPDX-License-Identifier: MIT
 //
 
