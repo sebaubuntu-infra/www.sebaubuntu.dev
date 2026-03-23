@@ -3,30 +3,27 @@
  * SPDX-License-Identifier: MIT
  */
 
+#main-page {
+    padding: 0px 32px;
+}
+
 /* Information dashboard */
 .information-dashboard {
-    align-items: flex-start;
-    border-radius: 16px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 /* Information tab */
 .information-tab {
-    background-color: #111111;
-    border-radius: 16px;
     display: flex;
     flex-direction: column;
-    margin: 16px;
+    margin: 16px 0px;
     padding: 16px;
 }
 
 .information-tab > * {
     margin-bottom: 8px;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
     margin-top: 8px;
 }

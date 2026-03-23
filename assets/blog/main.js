@@ -3,18 +3,18 @@
 // SPDX-License-Identifier: MIT
 //
 
-const PAGES_JSON_PATH = "assets/blog/pages.json";
+const POSTS_JSON_PATH = "assets/blog/posts.json";
 
 const mainPageElement = document.getElementById("main-page");
 
-class Page {
+class Post {
     /**
-     * Page constructor.
-     * @param {number} id The ID of the page
-     * @param {string} title The title of the page
-     * @param {string} description The description of the page
-     * @param {string} author The author of the page
-     * @param {number} timestamp The timestamp of the page
+     * Post constructor.
+     * @param {number} id The ID of the post
+     * @param {string} title The title of the post
+     * @param {string} description The description of the post
+     * @param {string} author The author of the post
+     * @param {number} timestamp The timestamp of the post
      */
     constructor(id, title, description, author, timestamp) {
         this.id = id;
@@ -25,12 +25,12 @@ class Page {
     }
 
     /**
-     * Create a Page from a JSON object.
-     * @param {object} json A JSON object representing the page
-     * @returns {Page} The page object
+     * Create a Post from a JSON object.
+     * @param {object} json A JSON object representing the post
+     * @returns {Post} The post object
      */
     static fromJson(json) {
-        return new Page(json.id, json.title, json.description, json.author, json.timestamp);
+        return new Post(json.id, json.title, json.description, json.author, json.timestamp);
     }
 
     /**
@@ -43,49 +43,52 @@ class Page {
     }
 
     /**
-     * Get a button to let the user open the page.
-     * @returns {HTMLDivElement} The HTML representation of the page
+     * Get a button to let the user open the post.
+     * @returns {HTMLElement} The HTML representation of the post
      */
     getButtonHtml() {
-        let div = document.createElement("div");
-        div.classList.add("post-card");
-        div.innerHTML = `
+        const card = document.createElement("mdui-card");
+        card.href = `blog.html?post=${this.id}`;
+        card.classList.add("post-card");
+        card.innerHTML = `
             <h5 class="post-card-description">${this.description}</h5>
-            <h2 class="post-card-title"><a href="blog.html?page=${this.id}">${this.title}</a></h2>
-            <p class="post-card-info">
-                <img src="assets/blog/icons/calendar_month.svg" alt="Date">
+            <h2 class="post-card-title">${this.title}</h2>
+            <p class="info">
+                <mdui-icon name="calendar_month--outlined" alt="Date"></mdui-icon>
                 <a>${this.getFormattedDate()}</a>
-                <img src="assets/blog/icons/account_circle.svg" alt="Author">
+
+                <mdui-icon name="account_circle--outlined" alt="Author"></mdui-icon>
                 <a>${this.author}</a>
             </p>
         `;
-        return div;
+
+        return card;
     }
 
     /**
-     * Get the HTML content of the page.
-     * @returns {Promise<string>} The HTML content of the page
+     * Get the HTML content of the post.
+     * @returns {Promise<string>} The HTML content of the post
      */
     async getContentHtml() {
-        var response = await fetch(`assets/blog/pages/${this.id}.html`);
+        var response = await fetch(`assets/blog/posts/${this.id}.html`);
         var text = await response.text();
         return text;
     }
 }
 
 /**
- * Get the pages from the JSON file.
- * @returns {Promise<Page[]?>} The pages, or null if the request failed
+ * Get the posts from the JSON file.
+ * @returns {Promise<Post[]?>} The posts, or null if the request failed
  */
-async function getPages() {
-    let response = await fetch(PAGES_JSON_PATH);
+async function getPosts() {
+    let response = await fetch(POSTS_JSON_PATH);
     if (!response.ok) {
         return null;
     }
 
     let data = await response.json();
 
-    return data.map(page => Page.fromJson(page));
+    return data.map(post => Post.fromJson(post));
 }
 
 async function main() {
@@ -94,8 +97,8 @@ async function main() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    let pages = await getPages();
-    if (!pages) {
+    let posts = await getPosts();
+    if (!posts) {
         // Add a warning to the user
         mainPageElement.innerHTML += `
             <h1 class="warning">Failed to load the blog posts.</h1>
@@ -103,11 +106,11 @@ async function main() {
         return;
     }
 
-    // If the user requested a specific page, show it
-    if (urlParams.has('page')) {
-        let requestedPage = urlParams.get('page');
-        let page = pages.find(page => page.id == requestedPage);
-        if (!page) {
+    // If the user requested a specific post, show it
+    if (urlParams.has('post')) {
+        let requestedPost = urlParams.get('post');
+        let post = posts.find(post => post.id == requestedPost);
+        if (!post) {
             // Add a warning to the user
             mainPageElement.innerHTML += `
                 <h1 class="warning">The requested post does not exist.</h1>
@@ -116,24 +119,29 @@ async function main() {
             return;
         }
 
-        // Replace the blog content with the requested page
-        let contentHtml = await page.getContentHtml();
+        // Replace the blog content with the requested post
+        let contentHtml = await post.getContentHtml();
 
         // Add title, description and date
         mainPageElement.innerHTML += `
-            <div id="post-header">
-                <h1 id="post-header-title">${page.title}</h1>
-                <h4 id="post-header-info">Written on ${page.getFormattedDate()} by ${page.author}</h4>
-            </div>
+            <mdui-card id="post-header">
+                <h1 id="post-header-title">${post.title}</h1>
+                <h4 id="post-header-info">Written on ${post.getFormattedDate()} by ${post.author}</h4>
+            </mdui-card>
             <div id="post-content">
                 ${contentHtml}
             </div>
         `;
     } else {
-        // The user didn't request a specific page, show the list of pages
-        pages.forEach(page => {
-            mainPageElement.appendChild(page.getButtonHtml());
+        // The user didn't request a specific post, show the list of posts
+        const postsListElement = document.createElement("div");
+        postsListElement.classList.add("posts-list");
+
+        posts.forEach(post => {
+            postsListElement.appendChild(post.getButtonHtml());
         });
+
+        mainPageElement.appendChild(postsListElement);
     }
 }
 

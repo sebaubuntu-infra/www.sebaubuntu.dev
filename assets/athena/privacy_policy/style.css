@@ -1,0 +1,19 @@
+/**
+ * SPDX-FileCopyrightText: Sebastiano Barezzi <seba@sebaubuntu.dev>
+ * SPDX-License-Identifier: MIT
+ */
+
+@import url("../style.css");
+
+#main-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0px;
+}
+
+#inner-container {
+    height: 100%;
+    overflow: auto;
+    padding: 16px 32px;
+}

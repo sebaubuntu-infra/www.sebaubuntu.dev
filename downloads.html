@@ -3,36 +3,38 @@
     SPDX-FileCopyrightText: Sebastiano Barezzi <seba@sebaubuntu.dev>
     SPDX-License-Identifier: MIT
 -->
-<html lang="en">
+<html lang="en" class="mdui-theme-auto">
 
 <head prefix="og: http://ogp.me/ns#">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <meta name="renderer" content="webkit" />
-    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" type="image/svg+xml" href="/assets/common/favicon.svg">
 
     <meta property="og:title" content="Downloads - SebaUbuntu" />
     <meta property="og:description" content="Downloads" />
-    <meta property="og:image" content="/assets/logo.svg" />
+    <meta property="og:image" content="/assets/common/favicon.svg" />
     <meta property="og:url" content="https://sebaubuntu.dev/downloads.html" />
 
-    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/common/style.css" />
+    <script src="/assets/common/mdui.js" type="module"></script>
 
     <title>Downloads - SebaUbuntu</title>
-    <link rel="stylesheet" href="/assets/css/downloads.css" />
+    <link rel="stylesheet" href="/assets/downloads/style.css" />
     <script src="/assets/downloads/main.js" type="module"></script>
 </head>
 
 <body>
     <div id="topbar-container">
-        <script src="/assets/topbar/main.js" type="module"></script>
+        <script src="/assets/common/topbar.js"></script>
     </div>
 
     <div id="main-page">
-        <div id="devices-list">
+        <mdui-card id="devices-list">
             <h1>Devices</h1>
             <h2>Loading...</h2>
-        </div>
+        </mdui-card>
 
         <div id="device-tab">
             <div id="device-image-tab"></div>

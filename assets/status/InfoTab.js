@@ -19,10 +19,10 @@ export default class InfoTab {
 
     /**
      * Get the HTML representation of the tab.
-     * @returns {HTMLDivElement} The HTML representation of the tab
+     * @returns {HTMLElement} The HTML representation of the tab
      */
     toHtml() {
-        let div = document.createElement("div");
+        let div = document.createElement("mdui-card");
         div.classList.add("information-tab");
 
         div.innerHTML = `

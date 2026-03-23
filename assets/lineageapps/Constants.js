@@ -5,6 +5,16 @@
 
 export class Constants {
     /**
+     * The path to the JSON file containing the apps data.
+     */
+    static APPS_JSON_PATH = "/assets/lineageapps/apps.json";
+
+    /**
+     * The base URL for the app icons.
+     */
+    static ICON_BASE_URL = "/assets/lineageapps/icons";
+
+    /**
      * The base URL for GitHub repos.
      */
     static REPO_BASE_URL = "https://github.com";

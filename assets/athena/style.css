@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: MIT
  */
 
+#main-page {
+    padding: 16px 32px;
+}
+
 .title-header {
     align-items: center;
     display: flex;

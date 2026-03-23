@@ -1,0 +1,101 @@
+/**
+ * SPDX-FileCopyrightText: Sebastiano Barezzi <seba@sebaubuntu.dev>
+ * SPDX-License-Identifier: MIT
+ */
+
+#main-page {
+    display: flex;
+    flex-direction: row;
+}
+
+#devices-list {
+    display: flex;
+    flex-direction: column;
+    margin: 32px;
+    overflow: auto;
+    padding: 0px 16px;
+    vertical-align: top;
+    width: 400px;
+}
+
+#devices-list > h1 {
+    /* Add padding for the title */
+    padding: 16px;
+}
+
+.device-button {
+    flex-shrink: 0;
+}
+
+.device-button p {
+    padding: 0px 16px;
+}
+
+#device-tab {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    height: calc(100% - 16px);
+    margin-top: 16px;
+    overflow: auto;
+    padding: 0px;
+}
+
+#device-info-tab {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+#device-image-tab {
+    align-items: flex-start;
+    display: flex;
+    height: 100%;
+    margin: 0px 32px;
+    order: 2;
+    width: 192px;
+}
+
+#device-image-tab > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width:1000px) {
+    /* 
+     * On mobile, we put devices list in upper part 
+     * of the screen, and the infos on the bottom
+    */
+
+    #main-page {
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    #devices-list {
+        margin: 0px 32px;
+        height: 50%;
+        width: auto;
+    }
+
+    #device-tab {
+        flex: initial;
+        flex-direction: column;
+        height: 50%;
+        margin: 0px;
+        overflow: initial;
+        padding: 32px;
+        width: auto;
+    }
+
+    #device-tab > div {
+        height: auto;
+        width: 100%;
+    }
+
+    #device-image-tab {
+        justify-content: center;
+        margin: 20px 0px;
+        order: inherit;
+    }
+}

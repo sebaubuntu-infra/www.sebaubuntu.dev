@@ -3,36 +3,38 @@
     SPDX-FileCopyrightText: Sebastiano Barezzi <seba@sebaubuntu.dev>
     SPDX-License-Identifier: MIT
 -->
-<html lang="en">
+<html lang="en" class="mdui-theme-auto">
 
 <head prefix="og: http://ogp.me/ns#">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <meta name="renderer" content="webkit" />
-    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" type="image/svg+xml" href="/assets/common/favicon.svg">
 
     <meta property="og:title" content="LineageOS apps - SebaUbuntu" />
     <meta property="og:description" content="LineageOS apps" />
-    <meta property="og:image" content="/assets/logo.svg" />
+    <meta property="og:image" content="/assets/common/favicon.svg" />
     <meta property="og:url" content="https://sebaubuntu.dev/lineageapps.html" />
 
-    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/common/style.css" />
+    <script src="/assets/common/mdui.js" type="module"></script>
 
     <title>LineageOS apps - SebaUbuntu</title>
-    <link rel="stylesheet" href="/assets/css/lineageapps.css" />
+    <link rel="stylesheet" href="/assets/lineageapps/style.css" />
     <script src="/assets/lineageapps/main.js" type="module"></script>
 </head>
 
 <body>
     <div id="topbar-container">
-        <script src="/assets/topbar/main.js" type="module"></script>
+        <script src="/assets/common/topbar.js"></script>
     </div>
 
     <div id="main-page">
-        <div id="apps-list">
+        <mdui-card id="apps-list">
             <h1>Apps</h1>
             <h2>Loading...</h2>
-        </div>
+        </mdui-card>
 
         <div id="app-builds">
             <h1>Please select an app from the apps menu</h1>

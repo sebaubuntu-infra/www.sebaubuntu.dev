@@ -3,8 +3,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-@import url("../athena.css");
-
-#inner-container {
-    padding-bottom: 18px;
+#main-page {
+    padding: 16px 32px 0px;
 }

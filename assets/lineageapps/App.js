@@ -9,11 +9,6 @@ import { VersionUtils } from "./VersionUtils.js";
 
 export class App {
     /**
-     * The base URL for the app icons.
-     */
-    static ICON_BASE_URL = "assets/lineageapps/icons";
-
-    /**
      * Constructor for AppInfo.
      * @param {string} name The name of the app
      * @param {string} description A short description of the app
@@ -42,7 +37,7 @@ export class App {
      * @returns {string} The URL to the app's icon (SVG).
      */
     getIconUrl() {
-        return `${App.ICON_BASE_URL}/${this.name}.svg`;
+        return `${Constants.ICON_BASE_URL}/${this.name}.svg`;
     }
 
     /**

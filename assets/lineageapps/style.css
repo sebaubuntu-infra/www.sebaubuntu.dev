@@ -5,20 +5,18 @@
 
 #main-page {
     display: flex;
-}
-
-#main-page > div {
-    box-sizing: border-box;
-    display: inline-block;
-    overflow: auto;
+    flex-direction: row;
 }
 
 #apps-list {
-    background-color: #111111;
-    border-radius: 8px;
-    flex: 1;
+    background-color: rgb(var(--mdui-color-surface-container-high));
+    display: flex;
+    flex-direction: column;
+    margin: 32px;
+    overflow: auto;
     padding: 0px 16px;
     vertical-align: top;
+    width: 400px;
 }
 
 #apps-list > h1 {
@@ -28,9 +26,8 @@
 
 /* App button */
 .app-button {
-    border-radius: 8px;
-    cursor: pointer;
     display: flex;
+    flex-shrink: 0;
     margin: 16px 0px;
     padding: 16px 0px;
 }
@@ -42,15 +39,8 @@
     text-overflow: ellipsis;
 }
 
-.app-button:not(.selected):hover {
-    background-color: #222222;
-}
-
-.app-button.selected {
-    background-color: #333333;
-}
-
 .app-button > .image {
+    width: 108px;
     margin: 0px 16px;
 }
 
@@ -68,9 +58,13 @@
 
 /* App builds tab */
 #app-builds {
-    flex: 3;
-    height: 100%;
-    padding: 0px 32px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: calc(100% - 16px);
+    margin-top: 16px;
+    overflow: auto;
+    padding: 0px 32px 0px 0px;
 }
 
 /* App header */
@@ -116,10 +110,10 @@
 
 /* Build button */
 .build-entry {
-    background-color: #111111;
-    border-radius: 8px;
+    background-color: rgb(var(--mdui-color-surface-container-high));
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     margin: 16px 0px;
     padding: 32px 0px;
 }
@@ -143,30 +137,30 @@
     text-overflow: ellipsis;
 }
 
-@media (max-width:700px) {
+@media (max-width:1000px) {
     /* 
      * On mobile, we put apps list in upper part 
      * of the screen, and the infos on the bottom
     */
 
     #main-page {
-        display: block;
-    }
-
-    #main-page > div {
-        flex: none;
-        width: 100%;
+        flex-direction: column;
+        overflow: auto;
     }
 
     #apps-list {
+        margin: 0px 32px;
         height: 50%;
+        width: auto;
     }
 
     #app-builds {
-        height: auto;
-        margin-top: 16px;
-        width: 100%;
-        padding: 0px;
+        flex: initial;
+        height: 50%;
+        margin: 0px;
+        overflow: initial;
+        padding: 32px;
+        width: auto;
     }
 
     .build-entry {

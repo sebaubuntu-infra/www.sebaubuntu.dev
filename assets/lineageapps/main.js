@@ -5,13 +5,13 @@
 
 import { App } from "./App.js";
 import { BuildInfo } from "./BuildInfo.js";
+import { Constants } from "./Constants.js";
 import { QueueScheduler } from "./QueueScheduler.js";
+import { setColorScheme } from '../common/mdui.js';
 
 // Elements
 const appsListElement = document.getElementById("apps-list");
 const appBuildsElement = document.getElementById("app-builds");
-
-const APPS_JSON_PATH = "assets/lineageapps/apps.json";
 
 const QUERY_KEY_APP = "app";
 
@@ -20,12 +20,12 @@ const selectAppQueueScheduler = new QueueScheduler(async (app) => await selectAp
 /**
  * Convert a build to an HTML entry.
  * @param {BuildInfo} build The build to convert to HTML
- * @returns {HTMLDivElement} The HTML representation of the build
+ * @returns {HTMLElement} The HTML representation of the build
  */
 function buildToHtmlEntry(build) {
-    let div = document.createElement("div");
-    div.classList.add("build-entry");
-    div.innerHTML = `
+    const card = document.createElement("mdui-card");
+    card.classList.add("build-entry");
+    card.innerHTML = `
         <h2 class="description">
             <a href="${build.getCommitUrl()}">
                 ${build.description} (${build.headCommit.substring(0, 7)})
@@ -38,9 +38,11 @@ function buildToHtmlEntry(build) {
         <br>
     `;
 
-    let downloadButtonElement = document.createElement("a");
-    downloadButtonElement.classList.add("download");
-    downloadButtonElement.href = "#";
+    const downloadButtonElement = document.createElement("mdui-button");
+    downloadButtonElement.variant = "outlined";
+    downloadButtonElement.fullWidth = true;
+    downloadButtonElement.icon = "file_download--outlined";
+    downloadButtonElement.innerHTML = "Download APK";
     downloadButtonElement.onclick = async (event) => {
         event.preventDefault();
 
@@ -52,10 +54,9 @@ function buildToHtmlEntry(build) {
 
         window.open(downloadUrl, "_blank");
     }
-    downloadButtonElement.innerHTML = "Download APK";
-    div.appendChild(downloadButtonElement);
+    card.appendChild(downloadButtonElement);
 
-    return div;
+    return card;
 }
 
 /**
@@ -64,24 +65,34 @@ function buildToHtmlEntry(build) {
  * @returns {HTMLDivElement} The HTML representation of the app header
  */
 function getAppHeaderElement(app) {
-    let div = document.createElement("div");
+    const div = document.createElement("div");
     div.classList.add("app-header");
+
     div.innerHTML = `
         <div class="info">
             <img class="icon" src="${app.getIconUrl()}" alt="${app.name}">
             <h1 class="name">${app.name}</h1>
         </div>
+
         <div class="links">
-            <a class="repo-link" href="${app.getRepoUrl()}/actions" target="_blank">
+            <mdui-button
+                variant="text"
+                end-icon="open_in_new"
+                href="${app.getRepoUrl()}/actions"
+                target="_blank">
                 Actions
-                <span class="material-icons">open_in_new</span>
-            </a>
-            <a class="repo-link" href="${app.getRepoUrl()}" target="_blank">
+            </mdui-button>
+
+            <mdui-button
+                variant="text"
+                end-icon="open_in_new"
+                href="${app.getRepoUrl()}"
+                target="_blank">
                 Repository
-                <span class="material-icons">open_in_new</span>
-            </a>
+            </mdui-button>
         </div>
     `;
+
     return div;
 }
 
@@ -92,18 +103,18 @@ function getAppHeaderElement(app) {
 async function selectApp(app) {
     // Show the builds of the selected app
     let selectedButton = document.getElementById(`app-button-${app.name}`);
-    if (!selectedButton || selectedButton.classList.contains("selected")) {
+    if (!selectedButton || selectedButton.variant === "filled") {
         return;
     }
 
     // Remove the selection class from all app buttons
     let buttons = document.getElementsByClassName("app-button");
     for (let button of buttons) {
-        button.classList.remove("selected");
+        button.variant = "";
     }
 
     // Mark the selected app button as selected
-    selectedButton.classList.add("selected");
+    selectedButton.variant = "filled";
 
     appBuildsElement.innerHTML = "";
 
@@ -132,27 +143,32 @@ async function selectApp(app) {
 /**
  * Convert an app to an HTML button.
  * @param {App} app The app to convert to HTML
- * @returns {HTMLDivElement} The HTML representation of the app
+ * @returns {HTMLElement} The HTML representation of the app
  */
 function appToHtmlButton(app) {
-    let div = document.createElement("div");
+    const card = document.createElement("mdui-card");
 
     // Set the ID of the app button to the app name
-    div.id = `app-button-${app.name}`;
-    div.classList.add("app-button");
-    div.onclick = () => selectAppQueueScheduler.schedule(app);
-    div.innerHTML = `
+    card.id = `app-button-${app.name}`;
+    card.classList.add("app-button");
+    card.variant = "";
+    card.clickable = true;
+    card.onclick = () => selectAppQueueScheduler.schedule(app);
+    card.innerHTML = `
         <img class="image" src="${app.getIconUrl()}" alt="${app.name}">
         <div class="info">
             <h2 class="name">${app.name}</h2>
             <p class="description">${app.description}</p>
         </div>
     `;
-    return div;
+    return card;
 }
 
 async function main() {
-    let response = await fetch(APPS_JSON_PATH);
+    // Set LineageOS Teal as accent color
+    setColorScheme("#167C80");
+
+    let response = await fetch(Constants.APPS_JSON_PATH);
     let data = await response.json();
 
     let apps = data.map((app) => App.fromJson(app));

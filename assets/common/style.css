@@ -1,0 +1,62 @@
+/**
+ * SPDX-FileCopyrightText: Sebastiano Barezzi <seba@sebaubuntu.dev>
+ * SPDX-License-Identifier: MIT
+ */
+
+/* MDUI */
+@import url("https://unpkg.com/mdui@2/mdui.css");
+
+/* Material Icons */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap');
+
+:root {
+    font-family: "Google Sans Flex", sans-serif;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+/* Topbar */
+.topbar {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 12px 8px;
+}
+
+.topbar > .logo {
+    color: rgb(var(--mdui-color-on-surface));
+    height: 36px;
+    margin: 4px;
+    width: 48px;
+}
+
+.topbar > .title {
+    font-size: 20px;
+    margin-right: 24px;
+}
+
+.topbar mdui-button {
+    margin: 4px;
+}
+
+/* Main page */
+#main-page {
+    box-sizing: border-box;
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
+    padding: 0px;
+}
